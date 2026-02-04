@@ -10,6 +10,9 @@ interface EnvConfig {
 	GITHUB_OWNER: string;
 	GITHUB_REPO: string;
 	GITHUB_BRANCH: string;
+	DOMAIN_NAME: string;
+	RECIPIENT_EMAIL: string;
+	ALLOWED_ORIGINS: string[];
 }
 
 function getRequiredEnv(key: string): string {
@@ -31,6 +34,11 @@ function loadEnvConfig(): EnvConfig {
 		GITHUB_OWNER: getRequiredEnv("GITHUB_OWNER"),
 		GITHUB_REPO: getRequiredEnv("GITHUB_REPO"),
 		GITHUB_BRANCH: getRequiredEnv("GITHUB_BRANCH"),
+		DOMAIN_NAME: getRequiredEnv("DOMAIN_NAME"),
+		RECIPIENT_EMAIL: getRequiredEnv("RECIPIENT_EMAIL"),
+		ALLOWED_ORIGINS: getRequiredEnv("ALLOWED_ORIGINS")
+			.split(",")
+			.map((s) => s.trim()),
 	};
 }
 

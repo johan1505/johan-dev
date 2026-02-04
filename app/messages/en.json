@@ -1,0 +1,154 @@
+{
+	"metadata": {
+		"title": "Johan Dev — Freelance Web Developer",
+		"description": "Freelance Web Developer crafting stunning, modern websites that help businesses grow. Former Amazon Engineer."
+	},
+	"jsonLd": {
+		"jobTitle": "Freelance Web Developer",
+		"description": "Freelance Web Developer crafting stunning, modern websites that help businesses grow."
+	},
+	"header": {
+		"brandFirst": "Johan",
+		"brandSecond": "Dev",
+		"cta": "Let's Talk",
+		"mobileMenu": {
+			"ariaLabel": "Toggle mobile menu",
+			"contactLink": "Contact Me"
+		}
+	},
+	"hero": {
+		"badge": "Available for new projects",
+		"title": "Hi, I'm Johan. I build",
+		"titleHighlight": "stunning and modern websites",
+		"titleEnd": "that help businesses grow.",
+		"subtitle": "Freelance Web Developer crafting seamless digital experiences.",
+		"cta": "Work With Me",
+		"viewPortfolio": "View Portfolio"
+	},
+	"about": {
+		"title": "About Me",
+		"paragraphs": [
+			"I combine a keen eye for aesthetics with the technical expertise as a former Amazon Engineer. Having built and optimized large-scale applications at Amazon, I understand exactly what it takes to create a user experience that is both intuitive and robust.",
+			"Great design shouldn't just look good — it needs to work seamlessly for your users. That's where I come in. If you have a business ready to refresh your online presence, I'm here to bring your vision to life!"
+		],
+		"stats": [
+			{ "label": "Years Exp.", "value": "5+" },
+			{ "label": "Satisfaction", "value": "100%" }
+		]
+	},
+	"services": {
+		"label": "Expertise",
+		"title": "Skills & Services",
+		"subtitle": "Specialized solutions tailored to your unique business needs",
+		"items": [
+			{
+				"title": "Website Design",
+				"description": "Beautiful, user-centered designs that capture your brand essence and engage your audience."
+			},
+			{
+				"title": "Web Development",
+				"description": "Efficient websites built with modern technologies for optimal performance."
+			},
+			{
+				"title": "SEO-Friendly Websites",
+				"description": "Optimized for search engines to help your business get discovered by the right audience."
+			},
+			{
+				"title": "Responsive Mobile Designs",
+				"description": "Seamless experiences across all devices, from smartphones to desktop screens."
+			}
+		]
+	},
+	"testimonials": {
+		"label": "Testimonials",
+		"title": "Client Success Stories",
+		"items": [
+			{
+				"quote": "Johan delivered exceptional work on our website redesign. The attention to detail and modern aesthetic exceeded our expectations.",
+				"author": "Sarah Johnson",
+				"role": "CEO, TechStart Inc.",
+				"initials": "SJ"
+			},
+			{
+				"quote": "Professional, responsive, and incredibly talented. Our new website has helped us attract more clients and grow our business.",
+				"author": "Michael Chen",
+				"role": "Founder, Digital Solutions",
+				"initials": "MC"
+			},
+			{
+				"quote": "The SEO improvements Johan implemented have significantly increased our organic traffic. Highly recommended!",
+				"author": "Emily Rodriguez",
+				"role": "Marketing Director, GrowthCo",
+				"initials": "ER"
+			}
+		]
+	},
+	"portfolio": {
+		"title": "Portfolio",
+		"highlight": "Coming Soon",
+		"description": "I'm currently curating a selection of my best projects to showcase here. In the meantime, I'm available for new opportunities and would love to discuss your project requirements.",
+		"cta": "Request Recent Work"
+	},
+	"contact": {
+		"label": "Get In Touch",
+		"title": "Let's Work Together",
+		"subtitle": "Have a project in mind? I'd love to hear about it. Send me a message and I'll respond as soon as possible.",
+		"form": {
+			"labels": {
+				"name": "Name",
+				"email": "Email",
+				"subject": "Subject",
+				"message": "Message",
+				"agree": "I agree to be contacted"
+			},
+			"placeholders": {
+				"name": "Your name",
+				"email": "your.email@example.com",
+				"subject": "What's this about?",
+				"message": "Tell me about your project..."
+			},
+			"agree": "I agree to be contacted regarding my inquiry.",
+			"submit": "Send Message"
+		},
+		"toast": {
+			"title": "Message sent!",
+			"description": "Thank you for reaching out. I'll get back to you soon."
+		},
+		"error": {
+			"title": "Something went wrong",
+			"description": "Please try again later.",
+			"agree": "You must agree to be contacted."
+		}
+	},
+	"footer": {
+		"brandFirst": "Johan",
+		"brandSecond": "Dev",
+		"tagline": "Designing the future of the web. Let's create something extraordinary together.",
+		"servicesTitle": "Services",
+		"services": ["Web Design", "Development", "SEO Optimization", "UI/UX Design"],
+		"linksTitle": "Links",
+		"copyright": "Johan Dev. All rights reserved.",
+		"madeWithPrefix": "Made with",
+		"madeWithSuffix": "and a lot of coffee",
+		"socialLinks": {
+			"linkedin": "Johan's LinkedIn",
+			"github": "Johan's GitHub"
+		}
+	},
+	"theme": {
+		"switchToLight": "Switch to light mode",
+		"switchToDark": "Switch to dark mode"
+	},
+	"sections": {
+		"about": "About",
+		"services": "Services",
+		"testimonials": "Testimonials",
+		"portfolio": "Portfolio",
+		"contact": "Contact"
+	},
+	"localeSwitcher": {
+		"label": "Select language",
+		"en": "EN",
+		"es": "ES"
+	}
+}

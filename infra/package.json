@@ -6,18 +6,20 @@
 		"infra": "bin/infra.js"
 	},
 	"scripts": {
-		"build": "tsc",
-		"synth": "tsc && cdk synth",
+		"build": "tsc && cdk synth",
 		"watch": "tsc -w",
 		"cdk": "cdk",
-		"deploy": "npm run test && tsc && cdk synth && cdk deploy --all --require-approval never",
+		"deploy": "npm run test && npm run build && cdk deploy --all --require-approval never",
 		"dev:fix": "biome lint --write . && biome format --write .",
 		"test:format": "biome format .",
 		"test:type-check": "tsc --noEmit",
 		"test": "npm-run-all test:*"
 	},
 	"devDependencies": {
+		"@aws-sdk/client-ses": "^3.982.0",
+		"@aws-sdk/client-sqs": "^3.982.0",
 		"@biomejs/biome": "latest",
+		"@types/aws-lambda": "latest",
 		"@types/node": "latest",
 		"aws-cdk": "latest",
 		"dotenv": "latest",
@@ -26,6 +28,7 @@
 		"typescript": "latest"
 	},
 	"dependencies": {
+		"@johan-dev/types": "*",
 		"aws-cdk-lib": "latest",
 		"constructs": "latest",
 		"source-map-support": "latest"

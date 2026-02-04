@@ -1,7 +1,7 @@
 {
 	"$schema": "https://biomejs.dev/schemas/latest/schema.json",
 	"files": {
-		"includes": ["bin/**", "lib/**"]
+		"includes": ["bin/**", "lib/**", "lambda/**"]
 	},
 	"formatter": {
 		"lineWidth": 100

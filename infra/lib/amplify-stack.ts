@@ -8,6 +8,8 @@ interface AmplifyStackProps extends cdk.StackProps {
 	githubOwner: string;
 	githubRepo: string;
 	githubBranch: string;
+	contactApiUrl: string;
+	domainName: string;
 }
 
 export class AmplifyStack extends cdk.Stack {
@@ -33,7 +35,7 @@ export class AmplifyStack extends cdk.Stack {
 			"version: 1",
 			"applications:",
 			"  - appRoot: app",
-			"    " + customHeadersYaml.split("\n").join("\n    "),
+			`    ${customHeadersYaml.split("\n").join("\n    ")}`,
 			"    frontend:",
 			"      phases:",
 			"        preBuild:",
@@ -85,6 +87,10 @@ export class AmplifyStack extends cdk.Stack {
 					name: "AMPLIFY_DIFF_DEPLOY_ROOT",
 					value: "app",
 				},
+				{
+					name: "NEXT_PUBLIC_CONTACT_API_URL",
+					value: props.contactApiUrl,
+				},
 			],
 		});
 
@@ -93,6 +99,21 @@ export class AmplifyStack extends cdk.Stack {
 			branchName: props.githubBranch,
 			enableAutoBuild: true,
 			stage: "PRODUCTION",
+		});
+
+		new amplify.CfnDomain(this, "AmplifyDomain", {
+			appId: this.amplifyApp.attrAppId,
+			domainName: props.domainName,
+			subDomainSettings: [
+				{
+					branchName: this.amplifyBranch.branchName,
+					prefix: "",
+				},
+				{
+					branchName: this.amplifyBranch.branchName,
+					prefix: "www",
+				},
+			],
 		});
 
 		new cdk.CfnOutput(this, "AmplifyAppUrl", {

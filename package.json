@@ -5,13 +5,14 @@
 	"packageManager": "npm@10.9.2",
 	"workspaces": [
 		"app",
-		"infra"
+		"infra",
+		"types"
 	],
 	"scripts": {
 		"build": "turbo run build",
 		"test": "turbo run test",
 		"dev": "turbo run dev",
-		"lint": "turbo run lint",
+		"dev:fix": "turbo run dev:fix",
 		"deploy": "turbo run deploy",
 		"deploy:infra": "turbo run deploy --filter=infra"
 	},

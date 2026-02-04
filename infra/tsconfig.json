@@ -15,7 +15,8 @@
 	},
 	"include": [
 		"bin/**/*",
-		"lib/**/*"
+		"lib/**/*",
+		"lambda/**/*"
 	],
 	"exclude": [
 		"node_modules",

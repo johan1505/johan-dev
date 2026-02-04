@@ -1,0 +1,151 @@
+{
+	"metadata": {
+		"title": "Johan Dev — Desarrollador Web Freelance",
+		"description": "Desarrollador Web Freelance creando sitios web impresionantes y modernos que ayudan a crecer a los negocios. Ex Ingeniero de Amazon."
+	},
+	"jsonLd": {
+		"jobTitle": "Desarrollador Web Freelance",
+		"description": "Desarrollador Web Freelance creando sitios web impresionantes y modernos."
+	},
+	"header": {
+		"brandFirst": "Johan",
+		"brandSecond": "Dev",
+		"cta": "Hablemos",
+		"mobileMenu": {
+			"ariaLabel": "Alternar menú móvil",
+			"contactLink": "Contáctame"
+		}
+	},
+	"hero": {
+		"badge": "Disponible para nuevos proyectos",
+		"title": "Hola, soy Johan. Construyo",
+		"titleHighlight": "sitios web impresionantes y modernos",
+		"titleEnd": "que ayudan a crecer a los negocios.",
+		"subtitle": "Desarrollador Web Freelance creando experiencias digitales fluidas.",
+		"cta": "Trabaja Conmigo",
+		"viewPortfolio": "Ver Portafolio"
+	},
+	"about": {
+		"title": "Sobre Mí",
+		"paragraphs": [
+			"Combino un ojo agudo para la estética con la experiencia técnica como ex Ingeniero de Amazon. Habiendo construido y optimizado aplicaciones a gran escala en Amazon, entiendo exactamente lo que se necesita para crear una experiencia de usuario que sea tanto intuitiva como robusta.",
+			"Un gran diseño no solo debe verse bien — necesita funcionar perfectamente para tus usuarios. Ahí es donde entro yo. Si tienes un negocio listo para renovar tu presencia en línea, ¡estoy aquí para dar vida a tu visión!"
+		],
+		"stats": [{ "label": "Años Exp.", "value": "5+" }, { "label": "Satisfacción", "value": "100%" }]
+	},
+	"services": {
+		"label": "Experiencia",
+		"title": "Habilidades y Servicios",
+		"subtitle": "Soluciones especializadas adaptadas a las necesidades únicas de tu negocio",
+		"items": [
+			{
+				"title": "Diseño Web",
+				"description": "Diseños hermosos centrados en el usuario que capturan la esencia de tu marca y cautivan a tu audiencia."
+			},
+			{
+				"title": "Desarrollo Web",
+				"description": "Sitios web eficientes construidos con tecnologías modernas para un rendimiento óptimo."
+			},
+			{
+				"title": "Sitios Web SEO-Friendly",
+				"description": "Optimizados para motores de búsqueda para ayudar a que tu negocio sea descubierto por la audiencia correcta."
+			},
+			{
+				"title": "Diseños Móviles Responsivos",
+				"description": "Experiencias fluidas en todos los dispositivos, desde smartphones hasta pantallas de escritorio."
+			}
+		]
+	},
+	"testimonials": {
+		"label": "Testimonios",
+		"title": "Historias de Éxito de Clientes",
+		"items": [
+			{
+				"quote": "Johan entregó un trabajo excepcional en el rediseño de nuestro sitio web. La atención al detalle y la estética moderna superaron nuestras expectativas.",
+				"author": "Sarah Johnson",
+				"role": "CEO, TechStart Inc.",
+				"initials": "SJ"
+			},
+			{
+				"quote": "Profesional, receptivo e increíblemente talentoso. Nuestro nuevo sitio web nos ha ayudado a atraer más clientes y hacer crecer nuestro negocio.",
+				"author": "Michael Chen",
+				"role": "Fundador, Digital Solutions",
+				"initials": "MC"
+			},
+			{
+				"quote": "Las mejoras de SEO que Johan implementó han aumentado significativamente nuestro tráfico orgánico. ¡Muy recomendado!",
+				"author": "Emily Rodriguez",
+				"role": "Directora de Marketing, GrowthCo",
+				"initials": "ER"
+			}
+		]
+	},
+	"portfolio": {
+		"title": "Portafolio",
+		"highlight": "Próximamente",
+		"description": "Actualmente estoy curando una selección de mis mejores proyectos para mostrar aquí. Mientras tanto, estoy disponible para nuevas oportunidades y me encantaría discutir los requisitos de tu proyecto.",
+		"cta": "Solicitar Trabajo Reciente"
+	},
+	"contact": {
+		"label": "Ponerse en Contacto",
+		"title": "Trabajemos Juntos",
+		"subtitle": "¿Tienes un proyecto en mente? Me encantaría saber de él. Envíame un mensaje y te responderé lo antes posible.",
+		"form": {
+			"labels": {
+				"name": "Nombre",
+				"email": "Correo",
+				"subject": "Asunto",
+				"message": "Mensaje",
+				"agree": "Acepto ser contactado"
+			},
+			"placeholders": {
+				"name": "Tu nombre",
+				"email": "tu.correo@ejemplo.com",
+				"subject": "¿De qué se trata?",
+				"message": "Cuéntame sobre tu proyecto..."
+			},
+			"agree": "Acepto ser contactado respecto a mi consulta.",
+			"submit": "Enviar Mensaje"
+		},
+		"toast": {
+			"title": "¡Mensaje enviado!",
+			"description": "Gracias por contactarme. Te responderé pronto."
+		},
+		"error": {
+			"title": "Algo salió mal",
+			"description": "Por favor, intenta de nuevo más tarde.",
+			"agree": "Debes aceptar ser contactado."
+		}
+	},
+	"footer": {
+		"brandFirst": "Johan",
+		"brandSecond": "Dev",
+		"tagline": "Diseñando el futuro de la web. Creemos algo extraordinario juntos.",
+		"servicesTitle": "Servicios",
+		"services": ["Diseño Web", "Desarrollo", "Optimización SEO", "Diseño UI/UX"],
+		"linksTitle": "Enlaces",
+		"copyright": "Johan Dev. Todos los derechos reservados.",
+		"madeWithPrefix": "Hecho con",
+		"madeWithSuffix": "y mucho café",
+		"socialLinks": {
+			"linkedin": "LinkedIn de Johan",
+			"github": "GitHub de Johan"
+		}
+	},
+	"theme": {
+		"switchToLight": "Cambiar a modo claro",
+		"switchToDark": "Cambiar a modo oscuro"
+	},
+	"sections": {
+		"about": "Sobre Mí",
+		"services": "Habilidades",
+		"testimonials": "Testimonios",
+		"portfolio": "Portafolio",
+		"contact": "Contacto"
+	},
+	"localeSwitcher": {
+		"label": "Seleccionar idioma",
+		"en": "EN",
+		"es": "ES"
+	}
+}

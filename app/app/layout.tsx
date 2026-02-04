@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-export const metadata: Metadata = {
-	title: "Johan Dev",
-	description: "Built with Next.js, Turborepo, and AWS Amplify",
-};
+const inter = Inter({
+	subsets: ["latin"],
+	variable: "--font-primary",
+});
 
 export default function RootLayout({
 	children,
@@ -12,7 +12,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" className={inter.variable} suppressHydrationWarning>
 			<body>{children}</body>
 		</html>
 	);
