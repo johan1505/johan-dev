@@ -1,0 +1,21 @@
+{
+	"name": "johan-dev",
+	"version": "0.0.0",
+	"private": true,
+	"packageManager": "npm@10.9.2",
+	"workspaces": [
+		"app",
+		"infra"
+	],
+	"scripts": {
+		"build": "turbo run build",
+		"test": "turbo run test",
+		"dev": "turbo run dev",
+		"lint": "turbo run lint",
+		"deploy": "turbo run deploy",
+		"deploy:infra": "turbo run deploy --filter=infra"
+	},
+	"devDependencies": {
+		"turbo": "latest"
+	}
+}

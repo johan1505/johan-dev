@@ -1,0 +1,20 @@
+{
+	"extends": [
+		"//"
+	],
+	"tasks": {
+		"build": {
+			"outputs": [
+				"out/**"
+			],
+			"inputs": [
+				"app/**",
+				"public/**",
+				"*.ts",
+				"*.mjs",
+				"package.json",
+				"tsconfig.json"
+			]
+		}
+	}
+}

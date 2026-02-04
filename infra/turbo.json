@@ -1,0 +1,33 @@
+{
+	"extends": [
+		"//"
+	],
+	"tasks": {
+		"build": {
+			"outputs": [
+				"dist/**",
+				"cdk.out/**"
+			],
+			"inputs": [
+				"lib/**",
+				"bin/**",
+				"package.json",
+				"tsconfig.json",
+				"cdk.json"
+			]
+		},
+		"deploy": {
+			"dependsOn": [
+				"build"
+			],
+			"passThroughEnv": [
+				"AWS_ACCESS_KEY_ID",
+				"AWS_SECRET_ACCESS_KEY",
+				"AWS_SESSION_TOKEN",
+				"AWS_REGION",
+				"CDK_DEFAULT_ACCOUNT",
+				"CDK_DEFAULT_REGION"
+			]
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"name": "app",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"dev:fix": "biome lint --write . && biome format --write .",
+		"test:format": "biome format .",
+		"test:type-check": "tsc --noEmit",
+		"test": "npm-run-all test:*"
+	},
+	"dependencies": {
+		"next": "latest",
+		"react": "latest",
+		"react-dom": "latest"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "latest",
+		"@tailwindcss/postcss": "latest",
+		"@types/node": "latest",
+		"@types/react": "latest",
+		"@types/react-dom": "latest",
+		"npm-run-all": "latest",
+		"tailwindcss": "latest",
+		"typescript": "latest"
+	}
+}
