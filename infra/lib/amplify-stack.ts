@@ -20,22 +20,23 @@ export class AmplifyStack extends cdk.Stack {
 		super(scope, id, props);
 
 		const customHeadersYaml = [
-			"customHeaders:",
-			"- pattern: _next/**",
-			"  headers:",
-			"    - key: Cache-Control",
-			"      value: public, max-age=31536000, immutable",
-			'- pattern: "*"',
-			"  headers:",
-			"    - key: Cache-Control",
-			"      value: max-age=0, s-maxage=600, must-revalidate",
+			"applications:",
+			" - appRoot: app",
+			"   customHeaders:",
+			"   - pattern: _next/**",
+			"     headers:",
+			"       - key: Cache-Control",
+			"         value: public, max-age=31536000, immutable",
+			'   - pattern: "*"',
+			"     headers:",
+			"       - key: Cache-Control",
+			"         value: max-age=0, s-maxage=600, must-revalidate",
 		].join("\n");
 
 		const buildSpec = [
 			"version: 1",
 			"applications:",
 			"  - appRoot: app",
-			`    ${customHeadersYaml.split("\n").join("\n    ")}`,
 			"    frontend:",
 			"      phases:",
 			"        preBuild:",
@@ -57,13 +58,13 @@ export class AmplifyStack extends cdk.Stack {
 		const amplifyRole = new iam.Role(this, "AmplifyServiceRole", {
 			assumedBy: new iam.CompositePrincipal(
 				new iam.ServicePrincipal("amplify.amazonaws.com"),
-				new iam.ServicePrincipal(`amplify.${this.region}.amazonaws.com`)
+				new iam.ServicePrincipal(`amplify.${this.region}.amazonaws.com`),
 			),
 			description: "Service role for Amplify to build and deploy the frontend",
 		});
 
 		amplifyRole.addManagedPolicy(
-			iam.ManagedPolicy.fromAwsManagedPolicyName("AdministratorAccess-Amplify")
+			iam.ManagedPolicy.fromAwsManagedPolicyName("AdministratorAccess-Amplify"),
 		);
 
 		this.amplifyApp = new amplify.CfnApp(this, "AmplifyApp", {
@@ -92,6 +93,7 @@ export class AmplifyStack extends cdk.Stack {
 					value: props.contactApiUrl,
 				},
 			],
+			customHeaders: customHeadersYaml,
 		});
 
 		this.amplifyBranch = new amplify.CfnBranch(this, "AmplifyBranch", {
