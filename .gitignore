@@ -6,6 +6,7 @@ dist/
 out/
 .next/
 cdk.out/
+cdk.context.json
 
 # Turborepo
 .turbo/

@@ -14,8 +14,8 @@ export class DomainStack extends cdk.Stack {
 	constructor(scope: Construct, id: string, props: DomainStackProps) {
 		super(scope, id, props);
 
-		this.hostedZone = new route53.HostedZone(this, "HostedZone", {
-			zoneName: props.domainName,
+		this.hostedZone = route53.HostedZone.fromLookup(this, "HostedZone", {
+			domainName: props.domainName,
 		});
 
 		this.certificate = new acm.Certificate(this, "Certificate", {
@@ -27,11 +27,6 @@ export class DomainStack extends cdk.Stack {
 		new cdk.CfnOutput(this, "HostedZoneId", {
 			value: this.hostedZone.hostedZoneId,
 			description: "Route 53 Hosted Zone ID",
-		});
-
-		new cdk.CfnOutput(this, "NameServers", {
-			value: cdk.Fn.join(", ", this.hostedZone.hostedZoneNameServers || []),
-			description: "NS records to set at domain registrar",
 		});
 
 		new cdk.CfnOutput(this, "CertificateArn", {

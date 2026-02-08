@@ -31,6 +31,7 @@
 		"@johan-dev/types": "*",
 		"aws-cdk-lib": "latest",
 		"constructs": "latest",
+		"esbuild": "^0.27.3",
 		"source-map-support": "latest"
 	}
 }

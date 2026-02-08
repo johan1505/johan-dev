@@ -62,7 +62,7 @@ function generateEmailContent(contact: ContactFormPayload): {
         </div>
 
         <div class="footer">
-          <p>This is an automated message from the johandev.net contact form.</p>
+          <p>This is an automated message from the johan5.com contact form.</p>
           <p>The sender has agreed to be contacted.</p>
         </div>
       </div>
@@ -88,7 +88,7 @@ Message
 ${contact.message}
 
 ---
-This is an automated message from the johandev.net contact form.
+This is an automated message from the johan5.com contact form.
 The sender has agreed to be contacted.
   `.trim();
 
