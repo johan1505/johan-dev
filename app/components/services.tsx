@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import { MotionDiv } from "@/components/motion";
 import { Layout, Code, Search, Smartphone } from "lucide-react";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 const ICONS = [Layout, Code, Search, Smartphone];
 
@@ -33,17 +33,10 @@ export async function Services() {
 					{items.map((item, index) => {
 						const Icon = ICONS[index];
 						return (
-							<MotionDiv
+							<ScrollReveal
 								key={item.title}
-								initial={{ opacity: 0, y: 30 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{
-									duration: 0.3,
-									delay: index * 0.08,
-									ease: [0.22, 1, 0.36, 1],
-								}}
 								className="border-brutal p-8 sm:p-10 group brutal-hover"
+								style={{ transitionDelay: `${index * 0.08}s` }}
 							>
 								<div className="flex items-start gap-5">
 									<div className="flex h-14 w-14 shrink-0 items-center justify-center border-[3px] border-foreground group-hover:border-primary group-hover:bg-primary transition-colors duration-150">
@@ -58,7 +51,7 @@ export async function Services() {
 										</p>
 									</div>
 								</div>
-							</MotionDiv>
+							</ScrollReveal>
 						);
 					})}
 				</div>

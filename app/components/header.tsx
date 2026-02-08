@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Menu } from "lucide-react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -45,17 +44,38 @@ function useActiveSection() {
 	return active;
 }
 
+const underlineTransition =
+	"left 0.3s cubic-bezier(0.22, 1, 0.36, 1), width 0.3s cubic-bezier(0.22, 1, 0.36, 1)";
+
 export function Header() {
 	const t = useTranslations();
 	const [scrolled, setScrolled] = useState(false);
 	const [open, setOpen] = useState(false);
 	const activeSection = useActiveSection();
 
+	const desktopRefs = useRef<Map<string, HTMLAnchorElement>>(new Map());
+	const mobileRefs = useRef<Map<string, HTMLAnchorElement>>(new Map());
+	const [desktopUnderline, setDesktopUnderline] = useState({ left: 0, width: 0 });
+	const [mobileUnderline, setMobileUnderline] = useState({ left: 0, width: 0 });
+
 	useEffect(() => {
 		const onScroll = () => setScrolled(window.scrollY > 20);
 		window.addEventListener("scroll", onScroll, { passive: true });
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
+
+	useEffect(() => {
+		if (activeSection) {
+			const desktopEl = desktopRefs.current.get(activeSection);
+			if (desktopEl) {
+				setDesktopUnderline({ left: desktopEl.offsetLeft, width: desktopEl.offsetWidth });
+			}
+			const mobileEl = mobileRefs.current.get(activeSection);
+			if (mobileEl) {
+				setMobileUnderline({ left: mobileEl.offsetLeft, width: mobileEl.offsetWidth });
+			}
+		}
+	}, [activeSection]);
 
 	const handleNavClick = useCallback(
 		(e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
@@ -72,6 +92,9 @@ export function Header() {
 	const desktopLinks = NAV_SECTIONS.map((key) => (
 		<a
 			key={key}
+			ref={(el) => {
+				if (el) desktopRefs.current.set(key, el);
+			}}
 			href={`#${key}`}
 			onClick={(e) => handleNavClick(e, key)}
 			className={`relative py-1 text-[0.75rem] font-mono uppercase tracking-[0.2em] font-medium transition-colors hover:text-primary ${
@@ -79,19 +102,15 @@ export function Header() {
 			}`}
 		>
 			{t(`sections.${key}`)}
-			{activeSection === key && (
-				<motion.span
-					layoutId="header-underline"
-					className="absolute bottom-0 left-0 right-0 h-[3px] bg-primary"
-					transition={{ type: "spring", stiffness: 500, damping: 35 }}
-				/>
-			)}
 		</a>
 	));
 
 	const mobileLinks = NAV_SECTIONS.map((key) => (
 		<a
 			key={key}
+			ref={(el) => {
+				if (el) mobileRefs.current.set(key, el);
+			}}
 			href={`#${key}`}
 			onClick={(e) => handleNavClick(e, key)}
 			className={`relative self-start py-2 text-[0.875rem] font-mono uppercase tracking-[0.2em] font-medium transition-colors hover:text-primary border-b-[3px] border-border pb-3 w-full ${
@@ -99,13 +118,6 @@ export function Header() {
 			}`}
 		>
 			{t(`sections.${key}`)}
-			{activeSection === key && (
-				<motion.span
-					layoutId="sidebar-underline"
-					className="absolute bottom-0 left-0 right-0 h-[3px] bg-primary"
-					transition={{ type: "spring", stiffness: 500, damping: 35 }}
-				/>
-			)}
 		</a>
 	));
 
@@ -121,7 +133,19 @@ export function Header() {
 					<span className="text-primary">.</span>
 				</a>
 
-				<nav className="hidden md:flex items-center gap-8">{desktopLinks}</nav>
+				<nav className="hidden md:flex items-center gap-8 relative">
+					{desktopLinks}
+					{activeSection && (
+						<span
+							className="absolute bottom-0 h-[3px] bg-primary"
+							style={{
+								left: desktopUnderline.left,
+								width: desktopUnderline.width,
+								transition: underlineTransition,
+							}}
+						/>
+					)}
+				</nav>
 
 				<div className="flex items-center gap-1">
 					<ThemeToggle />
@@ -155,7 +179,19 @@ export function Header() {
 								{t("header.brand")}
 								<span className="text-primary">.</span>
 							</SheetTitle>
-							<nav className="flex flex-col gap-2">{mobileLinks}</nav>
+							<nav className="flex flex-col gap-2 relative">
+								{mobileLinks}
+								{activeSection && (
+									<span
+										className="absolute bottom-0 h-[3px] bg-primary"
+										style={{
+											left: mobileUnderline.left,
+											width: mobileUnderline.width,
+											transition: underlineTransition,
+										}}
+									/>
+								)}
+							</nav>
 						</SheetContent>
 					</Sheet>
 				</div>

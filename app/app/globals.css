@@ -219,6 +219,83 @@ html {
 	animation: blink 1s step-end infinite;
 }
 
+/* ── On-mount entrance animations (hero) ── */
+@keyframes fade-in-up {
+	from {
+		opacity: 0;
+		transform: translateY(var(--anim-y, 30px));
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fade-in-left {
+	from {
+		opacity: 0;
+		transform: translateX(-40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes scale-x-in {
+	from {
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
+
+.animate-fade-in-up {
+	animation: fade-in-up 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-fade-in-left {
+	animation: fade-in-left 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-scale-x-in {
+	animation: scale-x-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Deferred entrance animations (play only inside .in-view parent) ── */
+.scroll-reveal > .reveal-fade-in-up {
+	opacity: 0;
+	transform: translateY(var(--anim-y, 30px));
+}
+
+.scroll-reveal.in-view > .reveal-fade-in-up {
+	animation: fade-in-up 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Scroll-triggered animations (services, testimonials, about) ── */
+.scroll-reveal {
+	opacity: 0;
+	transform: translateY(var(--anim-y, 30px));
+	transition:
+		opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+		transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal.in-view {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ── Accessibility ── */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-delay: 0ms !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
 /* ── Noise texture overlay ── */
 .noise-bg::before {
 	content: "";

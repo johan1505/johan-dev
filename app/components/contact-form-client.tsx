@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 type ContactFormTranslations = {
 	form: {
@@ -80,7 +81,7 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 			noValidate
 			className={`space-y-6 ${attempted ? "show-validation" : ""}`}
 		>
-			<div className="grid sm:grid-cols-2 gap-4">
+			<ScrollReveal className="grid sm:grid-cols-2 gap-4">
 				<div className="space-y-2">
 					<Label
 						htmlFor="name"
@@ -116,9 +117,9 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 						className="invalid-field border-[2px] border-border font-mono focus:border-primary"
 					/>
 				</div>
-			</div>
+			</ScrollReveal>
 
-			<div className="space-y-2">
+			<ScrollReveal className="space-y-2" style={{ transitionDelay: "0.08s" }}>
 				<Label
 					htmlFor="subject"
 					className="font-mono uppercase tracking-[0.15em] text-[0.6875rem] font-bold"
@@ -134,9 +135,9 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 					disabled={loading}
 					className="invalid-field border-[2px] border-border font-mono focus:border-primary"
 				/>
-			</div>
+			</ScrollReveal>
 
-			<div className="space-y-2">
+			<ScrollReveal className="space-y-2" style={{ transitionDelay: "0.16s" }}>
 				<Label
 					htmlFor="message"
 					className="font-mono uppercase tracking-[0.15em] text-[0.6875rem] font-bold"
@@ -153,9 +154,9 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 					disabled={loading}
 					className="invalid-field border-[2px] border-border font-mono focus:border-primary"
 				/>
-			</div>
+			</ScrollReveal>
 
-			<div className="flex items-center gap-3">
+			<ScrollReveal className="flex items-center gap-3" style={{ transitionDelay: "0.24s" }}>
 				<Checkbox
 					id="agree"
 					checked={agreed}
@@ -171,21 +172,23 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 				>
 					{t.form.agree}
 				</Label>
-			</div>
+			</ScrollReveal>
 
-			<Button
-				type="submit"
-				className="w-full text-[0.875rem] font-mono uppercase tracking-wider border-[3px] border-primary font-bold"
-				size="lg"
-				disabled={loading}
-			>
-				{loading ? (
-					<Loader2 className="h-4 w-4 animate-spin mr-2" />
-				) : (
-					<Send className="h-4 w-4 mr-2" />
-				)}
-				{t.form.submit}
-			</Button>
+			<ScrollReveal style={{ transitionDelay: "0.32s" }}>
+				<Button
+					type="submit"
+					className="w-full text-[0.875rem] font-mono uppercase tracking-wider border-[3px] border-primary font-bold"
+					size="lg"
+					disabled={loading}
+				>
+					{loading ? (
+						<Loader2 className="h-4 w-4 animate-spin mr-2" />
+					) : (
+						<Send className="h-4 w-4 mr-2" />
+					)}
+					{t.form.submit}
+				</Button>
+			</ScrollReveal>
 		</form>
 	);
 }

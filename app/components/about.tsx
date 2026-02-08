@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import { MotionDiv } from "@/components/motion";
 import { Briefcase, Award } from "lucide-react";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 const STAT_ICONS = [Briefcase, Award];
 const PARAGRAPH_COUNT = 2;
@@ -19,25 +19,16 @@ export async function About() {
 				<div>
 					{/* Main content */}
 					<div>
-						<MotionDiv
-							initial={{ opacity: 0, y: 30 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-							className="mb-10"
-						>
+						<ScrollReveal className="mb-10">
 							<h2 className="text-[2.5rem] sm:text-[3.5rem] font-black tracking-[-0.03em] uppercase leading-[0.95]">
 								{t("title")}
 							</h2>
 							<div className="h-[3px] w-20 bg-primary mt-4" />
-						</MotionDiv>
+						</ScrollReveal>
 
-						<MotionDiv
-							initial={{ opacity: 0, y: 30 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.3, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+						<ScrollReveal
 							className="border-brutal bg-card p-8 sm:p-10 mb-10"
+							style={{ transitionDelay: "0.1s" }}
 						>
 							<div className="space-y-5">
 								{paragraphs.map((paragraph) => (
@@ -49,23 +40,16 @@ export async function About() {
 									</p>
 								))}
 							</div>
-						</MotionDiv>
+						</ScrollReveal>
 
 						<div className="grid grid-cols-2 gap-0">
 							{stats.map((stat, index) => {
 								const Icon = STAT_ICONS[index];
 								return (
-									<MotionDiv
+									<ScrollReveal
 										key={stat.label}
-										initial={{ opacity: 0, y: 20 }}
-										whileInView={{ opacity: 1, y: 0 }}
-										viewport={{ once: true }}
-										transition={{
-											duration: 0.3,
-											delay: 0.2 + index * 0.1,
-											ease: [0.22, 1, 0.36, 1],
-										}}
 										className="border-brutal p-6 sm:p-8 text-center brutal-hover"
+										style={{ transitionDelay: `${0.2 + index * 0.1}s` }}
 									>
 										<div className="flex justify-center mb-3">
 											<div className="flex h-12 w-12 items-center justify-center border-[3px] border-primary">
@@ -78,7 +62,7 @@ export async function About() {
 										<p className="text-[0.6875rem] text-muted-foreground mt-3 uppercase tracking-[0.25em] font-mono">
 											{stat.label}
 										</p>
-									</MotionDiv>
+									</ScrollReveal>
 								);
 							})}
 						</div>

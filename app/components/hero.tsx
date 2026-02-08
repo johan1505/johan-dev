@@ -1,5 +1,4 @@
 import { getTranslations } from "next-intl/server";
-import { MotionDiv, MotionH1, MotionP } from "@/components/motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -12,11 +11,7 @@ export async function Hero() {
 				<div className="grid md:grid-cols-12 gap-0 items-end">
 					{/* Left column - massive type */}
 					<div className="md:col-span-8">
-						<MotionDiv
-							initial={{ opacity: 0, x: -40 }}
-							animate={{ opacity: 1, x: 0 }}
-							transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-						>
+						<div className="animate-fade-in-left">
 							<Badge
 								variant="outline"
 								className="mb-8 text-[0.75rem] px-4 py-1.5 font-mono uppercase tracking-[0.15em] border-[2px] border-foreground"
@@ -24,37 +19,37 @@ export async function Hero() {
 								<span className="animate-wave mr-1.5">&#x1F44B;</span>
 								{t("badge")}
 							</Badge>
-						</MotionDiv>
+						</div>
 
-						<MotionH1
-							initial={{ opacity: 0, y: 60 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-							className="text-[3.5rem] sm:text-[5rem] lg:text-[7rem] xl:text-[8rem] font-black tracking-[-0.04em] leading-[0.9] uppercase"
+						<h1
+							className="animate-fade-in-up text-[3.5rem] sm:text-[5rem] lg:text-[7rem] xl:text-[8rem] font-black tracking-[-0.04em] leading-[0.9] uppercase"
+							style={
+								{
+									"--anim-y": "60px",
+									animationDelay: "0.1s",
+									animationDuration: "0.4s",
+								} as React.CSSProperties
+							}
 						>
 							{t("titleStart")} <span className="text-primary italic">{t("titleHighlight1")}</span>{" "}
 							<span className="whitespace-nowrap">{t("titleMid")}</span>{" "}
 							<span className="text-primary italic">{t("titleHighlight2")}</span> {t("titleEnd")}
-						</MotionH1>
+						</h1>
 					</div>
 
 					{/* Right column - subtitle and CTAs */}
 					<div className="md:col-span-4 md:border-l-[3px] md:border-border md:pl-8 mt-10 md:mt-0 pb-4">
-						<MotionP
-							initial={{ opacity: 0, y: 30 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.3, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-							className="text-[1rem] sm:text-[1.125rem] text-muted-foreground font-mono leading-relaxed"
+						<p
+							className="animate-fade-in-up text-[1rem] sm:text-[1.125rem] text-muted-foreground font-mono leading-relaxed"
+							style={{ animationDelay: "0.2s" } as React.CSSProperties}
 						>
 							{t("subtitle")}
 							<span className="animate-blink text-primary ml-0.5">|</span>
-						</MotionP>
+						</p>
 
-						<MotionDiv
-							initial={{ opacity: 0, y: 30 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.3, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-							className="mt-8 flex flex-col sm:flex-row md:flex-col gap-3"
+						<div
+							className="animate-fade-in-up mt-8 flex flex-col sm:flex-row md:flex-col gap-3"
+							style={{ animationDelay: "0.3s" } as React.CSSProperties}
 						>
 							<Button
 								size="lg"
@@ -71,16 +66,14 @@ export async function Hero() {
 							>
 								<a href="#portfolio">{t("viewPortfolio")}</a>
 							</Button>
-						</MotionDiv>
+						</div>
 					</div>
 				</div>
 
 				{/* Bottom editorial line */}
-				<MotionDiv
-					initial={{ scaleX: 0 }}
-					animate={{ scaleX: 1 }}
-					transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-					className="mt-16 h-[3px] bg-border origin-left"
+				<div
+					className="animate-scale-x-in mt-16 h-[3px] bg-border origin-left"
+					style={{ animationDelay: "0.4s" } as React.CSSProperties}
 				/>
 			</div>
 		</section>

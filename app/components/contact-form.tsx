@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { ContactFormClient } from "@/components/contact-form-client";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 export async function ContactForm() {
 	const t = await getTranslations("contact");
@@ -36,7 +37,7 @@ export async function ContactForm() {
 			<div className="max-w-7xl mx-auto px-6 sm:px-8 w-full">
 				<div>
 					<div>
-						<div className="mb-10">
+						<ScrollReveal className="mb-10">
 							<p className="text-[0.6875rem] uppercase tracking-[0.3em] text-primary font-mono font-bold mb-3">
 								{t("label")}
 							</p>
@@ -47,11 +48,11 @@ export async function ContactForm() {
 							<p className="mt-6 text-[1rem] text-muted-foreground font-mono max-w-xl">
 								{t("subtitle")}
 							</p>
-						</div>
+						</ScrollReveal>
 
-						<div className="border-brutal p-8 sm:p-10">
+						<ScrollReveal className="border-brutal p-8 sm:p-10" style={{ transitionDelay: "0.1s" }}>
 							<ContactFormClient translations={translations} />
-						</div>
+						</ScrollReveal>
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import { MotionDiv } from "@/components/motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 const TESTIMONIAL_COUNT = 3;
 
@@ -33,17 +33,7 @@ export async function Testimonials() {
 
 				<div className="grid md:grid-cols-3 gap-0">
 					{items.map((item, index) => (
-						<MotionDiv
-							key={item.author}
-							initial={{ opacity: 0, y: 30 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{
-								duration: 0.3,
-								delay: index * 0.1,
-								ease: [0.22, 1, 0.36, 1],
-							}}
-						>
+						<ScrollReveal key={item.author} style={{ transitionDelay: `${index * 0.1}s` }}>
 							<Card className="h-full border-brutal brutal-hover">
 								<CardContent className="p-8 relative">
 									{/* Large quotation mark */}
@@ -70,7 +60,7 @@ export async function Testimonials() {
 									</div>
 								</CardContent>
 							</Card>
-						</MotionDiv>
+						</ScrollReveal>
 					))}
 				</div>
 			</div>

@@ -1,0 +1,25 @@
+"use client";
+
+import { useEffect, useRef, type ComponentPropsWithoutRef } from "react";
+
+export function ScrollReveal({ className = "", ...props }: ComponentPropsWithoutRef<"div">) {
+	const ref = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const el = ref.current;
+		if (!el) return;
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					el.classList.add("in-view");
+					observer.unobserve(el);
+				}
+			},
+			{ threshold: 0.1 }
+		);
+		observer.observe(el);
+		return () => observer.disconnect();
+	}, []);
+
+	return <div ref={ref} className={`scroll-reveal ${className}`} {...props} />;
+}

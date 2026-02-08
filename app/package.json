@@ -15,7 +15,6 @@
 		"@johan-dev/types": "*",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
-		"framer-motion": "latest",
 		"lucide-react": "^0.563.0",
 		"next": "latest",
 		"next-intl": "latest",
