@@ -58,13 +58,13 @@ export class AmplifyStack extends cdk.Stack {
 		const amplifyRole = new iam.Role(this, "AmplifyServiceRole", {
 			assumedBy: new iam.CompositePrincipal(
 				new iam.ServicePrincipal("amplify.amazonaws.com"),
-				new iam.ServicePrincipal(`amplify.${this.region}.amazonaws.com`),
+				new iam.ServicePrincipal(`amplify.${this.region}.amazonaws.com`)
 			),
 			description: "Service role for Amplify to build and deploy the frontend",
 		});
 
 		amplifyRole.addManagedPolicy(
-			iam.ManagedPolicy.fromAwsManagedPolicyName("AdministratorAccess-Amplify"),
+			iam.ManagedPolicy.fromAwsManagedPolicyName("AdministratorAccess-Amplify")
 		);
 
 		this.amplifyApp = new amplify.CfnApp(this, "AmplifyApp", {
