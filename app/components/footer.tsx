@@ -14,9 +14,7 @@ export async function Footer() {
 			<div className="max-w-6xl mx-auto px-6 sm:px-8 py-16">
 				<div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 					<div className="sm:col-span-2">
-						<p className="text-xl font-bold">
-							{t("footer.brand")}
-						</p>
+						<p className="text-xl font-bold">{t("footer.brand")}</p>
 						<p className="mt-2 text-[0.9375rem] text-muted-foreground max-w-sm">
 							{t("footer.tagline")}
 						</p>

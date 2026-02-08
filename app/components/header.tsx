@@ -150,9 +150,7 @@ export function Header() {
 							</Button>
 						</SheetTrigger>
 						<SheetContent side="right" className="w-64 px-6 pt-10">
-							<SheetTitle className="text-xl font-bold mb-8">
-								{t("header.brand")}
-							</SheetTitle>
+							<SheetTitle className="text-xl font-bold mb-8">{t("header.brand")}</SheetTitle>
 							<nav className="flex flex-col gap-4">{mobileLinks}</nav>
 						</SheetContent>
 					</Sheet>

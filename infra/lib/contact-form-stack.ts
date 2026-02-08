@@ -45,26 +45,22 @@ export class ContactFormStack extends cdk.Stack {
 			identity: ses.Identity.publicHostedZone(props.hostedZone),
 		});
 
-		const emailProcessorLambda = new NodejsFunction(
-			this,
-			"EmailProcessorLambda",
-			{
-				functionName: "johan-dev-contact-email-processor",
-				runtime: Runtime.NODEJS_LATEST,
-				entry: path.join(__dirname, "../lambda/email-processor.ts"),
-				handler: "handler",
-				timeout: cdk.Duration.seconds(LAMBDA_TIMEOUT_SECONDS),
-				memorySize: 256,
-				environment: {
-					RECIPIENT_EMAIL: props.recipientEmail,
-					SENDER_EMAIL: senderEmail,
-				},
-				bundling: {
-					minify: true,
-					sourceMap: true,
-				},
+		const emailProcessorLambda = new NodejsFunction(this, "EmailProcessorLambda", {
+			functionName: "johan-dev-contact-email-processor",
+			runtime: Runtime.NODEJS_LATEST,
+			entry: path.join(__dirname, "../lambda/email-processor.ts"),
+			handler: "handler",
+			timeout: cdk.Duration.seconds(LAMBDA_TIMEOUT_SECONDS),
+			memorySize: 256,
+			environment: {
+				RECIPIENT_EMAIL: props.recipientEmail,
+				SENDER_EMAIL: senderEmail,
 			},
-		);
+			bundling: {
+				minify: true,
+				sourceMap: true,
+			},
+		});
 
 		emailProcessorLambda.addToRolePolicy(
 			new iam.PolicyStatement({
@@ -72,13 +68,13 @@ export class ContactFormStack extends cdk.Stack {
 				resources: [
 					`arn:aws:ses:${this.region}:${this.account}:identity/${props.hostedZone.zoneName}`,
 				],
-			}),
+			})
 		);
 
 		emailProcessorLambda.addEventSource(
 			new lambdaEventSources.SqsEventSource(contactQueue, {
 				batchSize: 1,
-			}),
+			})
 		);
 
 		const apiHandlerLambda = new NodejsFunction(this, "ApiHandlerLambda", {
@@ -115,12 +111,11 @@ export class ContactFormStack extends cdk.Stack {
 			methods: [apigateway.HttpMethod.POST],
 			integration: new apigatewayIntegrations.HttpLambdaIntegration(
 				"ContactApiIntegration",
-				apiHandlerLambda,
+				apiHandlerLambda
 			),
 		});
 
-		const stage = httpApi.defaultStage?.node
-			.defaultChild as apigateway.CfnStage;
+		const stage = httpApi.defaultStage?.node.defaultChild as apigateway.CfnStage;
 		stage.addPropertyOverride("DefaultRouteSettings", {
 			ThrottlingBurstLimit: 50,
 			ThrottlingRateLimit: 25,
