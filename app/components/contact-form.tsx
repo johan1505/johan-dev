@@ -33,17 +33,27 @@ export async function ContactForm() {
 
 	return (
 		<section id="contact" className="min-h-[calc(100vh-4rem)] flex items-center py-24 sm:py-32">
-			<div className="max-w-2xl mx-auto px-6 sm:px-8 w-full">
-				<div className="text-center mb-12">
-					<p className="text-[0.8125rem] uppercase tracking-widest text-primary font-medium mb-2">
-						{t("label")}
-					</p>
-					<h2 className="text-[2rem] sm:text-[2.5rem] font-bold tracking-tight">{t("title")}</h2>
-					<div className="h-1 w-12 bg-primary rounded-full mx-auto mt-3" />
-					<p className="mt-4 text-[1rem] text-muted-foreground">{t("subtitle")}</p>
-				</div>
+			<div className="max-w-7xl mx-auto px-6 sm:px-8 w-full">
+				<div>
+					<div>
+						<div className="mb-10">
+							<p className="text-[0.6875rem] uppercase tracking-[0.3em] text-primary font-mono font-bold mb-3">
+								{t("label")}
+							</p>
+							<h2 className="text-[2.5rem] sm:text-[3.5rem] font-black tracking-[-0.03em] uppercase leading-[0.95]">
+								{t("title")}
+							</h2>
+							<div className="h-[3px] w-20 bg-primary mt-4" />
+							<p className="mt-6 text-[1rem] text-muted-foreground font-mono max-w-xl">
+								{t("subtitle")}
+							</p>
+						</div>
 
-				<ContactFormClient translations={translations} />
+						<div className="border-brutal p-8 sm:p-10">
+							<ContactFormClient translations={translations} />
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	);

@@ -1,9 +1,16 @@
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
 	subsets: ["latin"],
 	variable: "--font-primary",
+	weight: ["400", "500", "700", "900"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+	subsets: ["latin"],
+	variable: "--font-mono",
+	weight: ["400", "500", "700"],
 });
 
 export default function RootLayout({
@@ -12,8 +19,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className={inter.variable} suppressHydrationWarning>
-			<body>{children}</body>
+		<html
+			lang="en"
+			className={`${inter.variable} ${jetbrainsMono.variable}`}
+			suppressHydrationWarning
+		>
+			<body className="noise-bg">{children}</body>
 		</html>
 	);
 }

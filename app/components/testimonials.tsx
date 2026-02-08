@@ -18,36 +18,54 @@ export async function Testimonials() {
 			id="testimonials"
 			className="min-h-[calc(100vh-4rem)] flex items-center py-24 sm:py-32"
 		>
-			<div className="max-w-6xl mx-auto px-6 sm:px-8 w-full">
-				<div className="text-center mb-16">
-					<p className="text-[0.8125rem] uppercase tracking-widest text-primary font-medium mb-2">
-						{t("label")}
-					</p>
-					<h2 className="text-[2rem] sm:text-[2.5rem] font-bold tracking-tight">{t("title")}</h2>
-					<div className="h-1 w-12 bg-primary rounded-full mx-auto mt-3" />
+			<div className="max-w-7xl mx-auto px-6 sm:px-8 w-full">
+				<div className="mb-16">
+					<div>
+						<p className="text-[0.6875rem] uppercase tracking-[0.3em] text-primary font-mono font-bold mb-3">
+							{t("label")}
+						</p>
+						<h2 className="text-[2.5rem] sm:text-[3.5rem] font-black tracking-[-0.03em] uppercase leading-[0.95]">
+							{t("title")}
+						</h2>
+						<div className="h-[3px] w-20 bg-primary mt-4" />
+					</div>
 				</div>
 
-				<div className="grid md:grid-cols-3 gap-6">
+				<div className="grid md:grid-cols-3 gap-0">
 					{items.map((item, index) => (
 						<MotionDiv
 							key={item.author}
-							initial={{ opacity: 0, y: 20 }}
+							initial={{ opacity: 0, y: 30 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
-							transition={{ duration: 0.4, delay: index * 0.1 }}
+							transition={{
+								duration: 0.3,
+								delay: index * 0.1,
+								ease: [0.22, 1, 0.36, 1],
+							}}
 						>
-							<Card className="h-full">
-								<CardContent className="p-6">
-									<p className="italic text-[0.9375rem] text-muted-foreground leading-relaxed mb-6">
-										&ldquo;{item.quote}&rdquo;
+							<Card className="h-full border-brutal brutal-hover">
+								<CardContent className="p-8 relative">
+									{/* Large quotation mark */}
+									<span className="quote-mark">&ldquo;</span>
+
+									<p className="text-[0.9375rem] text-muted-foreground leading-relaxed mb-8 mt-12 font-mono">
+										{item.quote}
 									</p>
-									<div className="flex items-center gap-3">
-										<div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary text-[0.8125rem] font-semibold text-primary">
-											{item.initials}
-										</div>
-										<div>
-											<p className="font-semibold text-[0.875rem]">{item.author}</p>
-											<p className="text-[0.75rem] text-muted-foreground">{item.role}</p>
+
+									<div className="border-t-[3px] border-border pt-5">
+										<div className="flex items-center gap-4">
+											<div className="flex h-12 w-12 items-center justify-center border-[3px] border-primary text-[0.875rem] font-black text-primary font-mono">
+												{item.initials}
+											</div>
+											<div>
+												<p className="font-black text-[0.875rem] uppercase tracking-wide">
+													{item.author}
+												</p>
+												<p className="text-[0.6875rem] text-muted-foreground font-mono uppercase tracking-[0.15em]">
+													{item.role}
+												</p>
+											</div>
 										</div>
 									</div>
 								</CardContent>

@@ -22,7 +22,7 @@ type ContactFormTranslations = {
 };
 
 function RequiredDot() {
-	return <span className="text-primary ml-0.5">*</span>;
+	return <span className="text-primary ml-0.5 font-bold">*</span>;
 }
 
 export function ContactFormClient({ translations: t }: { translations: ContactFormTranslations }) {
@@ -82,7 +82,10 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 		>
 			<div className="grid sm:grid-cols-2 gap-4">
 				<div className="space-y-2">
-					<Label htmlFor="name">
+					<Label
+						htmlFor="name"
+						className="font-mono uppercase tracking-[0.15em] text-[0.6875rem] font-bold"
+					>
 						{t.form.labels.name}
 						<RequiredDot />
 					</Label>
@@ -92,11 +95,14 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 						placeholder={t.form.placeholders.name}
 						required
 						disabled={loading}
-						className="invalid-field"
+						className="invalid-field border-[2px] border-border font-mono focus:border-primary"
 					/>
 				</div>
 				<div className="space-y-2">
-					<Label htmlFor="email">
+					<Label
+						htmlFor="email"
+						className="font-mono uppercase tracking-[0.15em] text-[0.6875rem] font-bold"
+					>
 						{t.form.labels.email}
 						<RequiredDot />
 					</Label>
@@ -107,13 +113,16 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 						placeholder={t.form.placeholders.email}
 						required
 						disabled={loading}
-						className="invalid-field"
+						className="invalid-field border-[2px] border-border font-mono focus:border-primary"
 					/>
 				</div>
 			</div>
 
 			<div className="space-y-2">
-				<Label htmlFor="subject">
+				<Label
+					htmlFor="subject"
+					className="font-mono uppercase tracking-[0.15em] text-[0.6875rem] font-bold"
+				>
 					{t.form.labels.subject}
 					<RequiredDot />
 				</Label>
@@ -123,12 +132,15 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 					placeholder={t.form.placeholders.subject}
 					required
 					disabled={loading}
-					className="invalid-field"
+					className="invalid-field border-[2px] border-border font-mono focus:border-primary"
 				/>
 			</div>
 
 			<div className="space-y-2">
-				<Label htmlFor="message">
+				<Label
+					htmlFor="message"
+					className="font-mono uppercase tracking-[0.15em] text-[0.6875rem] font-bold"
+				>
 					{t.form.labels.message}
 					<RequiredDot />
 				</Label>
@@ -139,21 +151,21 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 					rows={5}
 					required
 					disabled={loading}
-					className="invalid-field"
+					className="invalid-field border-[2px] border-border font-mono focus:border-primary"
 				/>
 			</div>
 
-			<div className="flex items-center gap-2">
+			<div className="flex items-center gap-3">
 				<Checkbox
 					id="agree"
 					checked={agreed}
 					onCheckedChange={(checked) => setAgreed(checked === true)}
 					disabled={loading}
-					className={attempted && !agreed ? "border-destructive" : ""}
+					className={`border-[2px] ${attempted && !agreed ? "border-destructive" : "border-border"}`}
 				/>
 				<Label
 					htmlFor="agree"
-					className={`text-[0.875rem] cursor-pointer ${
+					className={`text-[0.75rem] cursor-pointer font-mono uppercase tracking-wider ${
 						attempted && !agreed ? "text-destructive" : "text-muted-foreground"
 					}`}
 				>
@@ -161,7 +173,12 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 				</Label>
 			</div>
 
-			<Button type="submit" className="w-full text-[0.9375rem]" size="lg" disabled={loading}>
+			<Button
+				type="submit"
+				className="w-full text-[0.875rem] font-mono uppercase tracking-wider border-[3px] border-primary font-bold"
+				size="lg"
+				disabled={loading}
+			>
 				{loading ? (
 					<Loader2 className="h-4 w-4 animate-spin mr-2" />
 				) : (

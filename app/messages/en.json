@@ -17,8 +17,10 @@
 	},
 	"hero": {
 		"badge": "Available for new projects",
-		"title": "Hi, I'm Johan. I build",
-		"titleHighlight": "stunning and modern websites",
+		"titleStart": "I'm",
+		"titleHighlight1": "Johan.",
+		"titleMid": "I build",
+		"titleHighlight2": "websites",
 		"titleEnd": "that help businesses grow.",
 		"subtitle": "Freelance Web Developer crafting seamless digital experiences.",
 		"cta": "Work With Me",
@@ -27,7 +29,7 @@
 	"about": {
 		"title": "About Me",
 		"paragraphs": [
-			"I combine a keen eye for aesthetics with the technical expertise as a former Amazon Engineer. Having built and optimized large-scale applications at Amazon, I understand exactly what it takes to create a user experience that is both intuitive and robust.",
+			"I combine a keen eye for aesthetics with the technical expertise as a former Amazon Engineer. Having built and optimized large-scale applications at big tech companies, I understand exactly what it takes to create a user experience that is both intuitive and robust.",
 			"Great design shouldn't just look good — it needs to work seamlessly for your users. That's where I come in. If you have a business ready to refresh your online presence, I'm here to bring your vision to life!"
 		],
 		"stats": [

@@ -13,39 +13,51 @@ export async function Services() {
 
 	return (
 		<section id="services" className="min-h-[calc(100vh-4rem)] flex items-center py-24 sm:py-32">
-			<div className="max-w-6xl mx-auto px-6 sm:px-8 w-full">
-				<div className="text-center mb-16">
-					<p className="text-[0.8125rem] uppercase tracking-widest text-primary font-medium mb-2">
-						{t("label")}
-					</p>
-					<h2 className="text-[2rem] sm:text-[2.5rem] font-bold tracking-tight">{t("title")}</h2>
-					<div className="h-1 w-12 bg-primary rounded-full mx-auto mt-3" />
-					<p className="mt-4 text-[1rem] text-muted-foreground max-w-2xl mx-auto">
-						{t("subtitle")}
-					</p>
+			<div className="max-w-7xl mx-auto px-6 sm:px-8 w-full">
+				<div className="mb-16">
+					<div>
+						<p className="text-[0.6875rem] uppercase tracking-[0.3em] text-primary font-mono font-bold mb-3">
+							{t("label")}
+						</p>
+						<h2 className="text-[2.5rem] sm:text-[3.5rem] font-black tracking-[-0.03em] uppercase leading-[0.95]">
+							{t("title")}
+						</h2>
+						<div className="h-[3px] w-20 bg-primary mt-4" />
+						<p className="mt-6 text-[1rem] text-muted-foreground font-mono max-w-2xl">
+							{t("subtitle")}
+						</p>
+					</div>
 				</div>
 
-				<div className="grid sm:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden border border-border">
+				<div className="grid sm:grid-cols-2 gap-0">
 					{items.map((item, index) => {
 						const Icon = ICONS[index];
 						return (
 							<MotionDiv
 								key={item.title}
-								initial={{ opacity: 0, y: 20 }}
+								initial={{ opacity: 0, y: 30 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
-								transition={{ duration: 0.4, delay: index * 0.1 }}
-								className="bg-background p-8 sm:p-10"
+								transition={{
+									duration: 0.3,
+									delay: index * 0.08,
+									ease: [0.22, 1, 0.36, 1],
+								}}
+								className="border-brutal p-8 sm:p-10 group brutal-hover"
 							>
-								<div className="flex justify-center mb-5">
-									<div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-										<Icon className="h-6 w-6 text-primary" />
+								<div className="flex items-start gap-5">
+									<div className="flex h-14 w-14 shrink-0 items-center justify-center border-[3px] border-foreground group-hover:border-primary group-hover:bg-primary transition-colors duration-150">
+										<Icon className="h-6 w-6 text-foreground group-hover:text-primary-foreground transition-colors duration-150" />
+									</div>
+									<div>
+										<h3 className="text-[1.125rem] font-black uppercase tracking-tight mb-2">
+											{item.title}
+										</h3>
+										<p className="text-[0.875rem] text-muted-foreground leading-relaxed font-mono">
+											{item.description}
+										</p>
 									</div>
 								</div>
-								<h3 className="text-[1.125rem] font-semibold mb-2 text-center">{item.title}</h3>
-								<p className="text-[0.9375rem] text-muted-foreground leading-relaxed text-center">
-									{item.description}
-								</p>
 							</MotionDiv>
 						);
 					})}

@@ -74,16 +74,16 @@ export function Header() {
 			key={key}
 			href={`#${key}`}
 			onClick={(e) => handleNavClick(e, key)}
-			className={`relative py-1 text-[0.9375rem] font-medium transition-colors hover:text-foreground ${
-				activeSection === key ? "text-foreground" : "text-muted-foreground"
+			className={`relative py-1 text-[0.75rem] font-mono uppercase tracking-[0.2em] font-medium transition-colors hover:text-primary ${
+				activeSection === key ? "text-primary" : "text-muted-foreground"
 			}`}
 		>
 			{t(`sections.${key}`)}
 			{activeSection === key && (
 				<motion.span
 					layoutId="header-underline"
-					className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
-					transition={{ type: "spring", stiffness: 350, damping: 30 }}
+					className="absolute bottom-0 left-0 right-0 h-[3px] bg-primary"
+					transition={{ type: "spring", stiffness: 500, damping: 35 }}
 				/>
 			)}
 		</a>
@@ -94,16 +94,16 @@ export function Header() {
 			key={key}
 			href={`#${key}`}
 			onClick={(e) => handleNavClick(e, key)}
-			className={`relative self-start py-1 text-[0.9375rem] font-medium transition-colors hover:text-foreground ${
-				activeSection === key ? "text-foreground" : "text-muted-foreground"
+			className={`relative self-start py-2 text-[0.875rem] font-mono uppercase tracking-[0.2em] font-medium transition-colors hover:text-primary border-b-[3px] border-border pb-3 w-full ${
+				activeSection === key ? "text-primary" : "text-muted-foreground"
 			}`}
 		>
 			{t(`sections.${key}`)}
 			{activeSection === key && (
 				<motion.span
 					layoutId="sidebar-underline"
-					className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
-					transition={{ type: "spring", stiffness: 350, damping: 30 }}
+					className="absolute bottom-0 left-0 right-0 h-[3px] bg-primary"
+					transition={{ type: "spring", stiffness: 500, damping: 35 }}
 				/>
 			)}
 		</a>
@@ -111,24 +111,25 @@ export function Header() {
 
 	return (
 		<header
-			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-				scrolled ? "bg-background/80 backdrop-blur-sm border-b border-border" : ""
+			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-150 ${
+				scrolled ? "bg-background/95 backdrop-blur-sm border-b-[3px] border-border" : ""
 			}`}
 		>
-			<div className="max-w-6xl mx-auto px-6 sm:px-8 flex h-16 items-center justify-between">
-				<a href="/" className="text-xl font-bold">
+			<div className="max-w-7xl mx-auto px-6 sm:px-8 flex h-16 items-center justify-between">
+				<a href="/" className="text-2xl font-black uppercase tracking-[-0.02em]">
 					{t("header.brand")}
+					<span className="text-primary">.</span>
 				</a>
 
 				<nav className="hidden md:flex items-center gap-8">{desktopLinks}</nav>
 
 				<div className="flex items-center gap-1">
 					<ThemeToggle />
-					<div className="h-4 w-px bg-border mx-1 hidden sm:block" />
+					<div className="h-5 w-[3px] bg-border mx-2 hidden sm:block" />
 					<LocaleSwitcher />
 					<Button
 						size="sm"
-						className="hidden md:inline-flex ml-2 cursor-pointer"
+						className="hidden md:inline-flex ml-3 cursor-pointer font-mono uppercase tracking-wider text-[0.75rem] border-[3px] border-primary font-bold"
 						onClick={(e) => {
 							e.preventDefault();
 							const el = document.getElementById("contact");
@@ -149,9 +150,12 @@ export function Header() {
 								<Menu className="h-5 w-5" />
 							</Button>
 						</SheetTrigger>
-						<SheetContent side="right" className="w-64 px-6 pt-10">
-							<SheetTitle className="text-xl font-bold mb-8">{t("header.brand")}</SheetTitle>
-							<nav className="flex flex-col gap-4">{mobileLinks}</nav>
+						<SheetContent side="right" className="w-72 px-6 pt-10 border-l-[3px] border-border">
+							<SheetTitle className="text-2xl font-black uppercase mb-8">
+								{t("header.brand")}
+								<span className="text-primary">.</span>
+							</SheetTitle>
+							<nav className="flex flex-col gap-2">{mobileLinks}</nav>
 						</SheetContent>
 					</Sheet>
 				</div>
