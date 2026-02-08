@@ -32,10 +32,7 @@
 			"Combino un ojo agudo para la estética con la experiencia técnica como ex Ingeniero de Amazon. Habiendo construido y optimizado aplicaciones a gran escala en grandes empresas de tecnología, entiendo exactamente lo que se necesita para crear una experiencia de usuario que sea tanto intuitiva como robusta.",
 			"Un gran diseño no solo debe verse bien — necesita funcionar perfectamente para tus usuarios. Ahí es donde entro yo. Si tienes un negocio listo para renovar tu presencia en línea, ¡estoy aquí para dar vida a tu visión!"
 		],
-		"stats": [
-			{ "label": "Años Exp.", "value": "5+" },
-			{ "label": "Satisfacción", "value": "100%" }
-		]
+		"stats": [{ "label": "Años Exp.", "value": "5+" }, { "label": "Satisfacción", "value": "100%" }]
 	},
 	"services": {
 		"label": "Experiencia",
@@ -125,12 +122,7 @@
 		"brand": "Johan",
 		"tagline": "Diseñando el futuro de la web. Creemos algo extraordinario juntos.",
 		"servicesTitle": "Servicios",
-		"services": [
-			"Diseño Web",
-			"Desarrollo",
-			"Optimización SEO",
-			"Diseño UI/UX"
-		],
+		"services": ["Diseño Web", "Desarrollo", "Optimización SEO", "Diseño UI/UX"],
 		"linksTitle": "Enlaces",
 		"copyright": "Johan. Todos los derechos reservados.",
 		"madeWithPrefix": "Hecho con",
