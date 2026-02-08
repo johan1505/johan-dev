@@ -29,12 +29,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		alternates[loc] = `${SITE_URL}/${loc}/`;
 	}
 
+	const localeUrl = `${SITE_URL}/${locale}/`;
+
 	return {
 		title: meta.title,
 		description: meta.description,
 		metadataBase: new URL(SITE_URL),
 		alternates: {
-			canonical: SITE_URL,
+			canonical: localeUrl,
 			languages: alternates,
 		},
 		robots: {
@@ -51,8 +53,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		openGraph: {
 			title: meta.title,
 			description: meta.description,
-			url: SITE_URL,
-			siteName: "Johan Dev",
+			url: localeUrl,
+			siteName: "Johan",
 			locale,
 			type: "website",
 		},

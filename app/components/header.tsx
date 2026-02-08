@@ -117,8 +117,7 @@ export function Header() {
 		>
 			<div className="max-w-6xl mx-auto px-6 sm:px-8 flex h-16 items-center justify-between">
 				<a href="/" className="text-xl font-bold">
-					{t("header.brandFirst")}
-					<span className="text-primary">{t("header.brandSecond")}</span>
+					{t("header.brand")}
 				</a>
 
 				<nav className="hidden md:flex items-center gap-8">{desktopLinks}</nav>
@@ -129,7 +128,7 @@ export function Header() {
 					<LocaleSwitcher />
 					<Button
 						size="sm"
-						className="hidden md:inline-flex ml-2"
+						className="hidden md:inline-flex ml-2 cursor-pointer"
 						onClick={(e) => {
 							e.preventDefault();
 							const el = document.getElementById("contact");
@@ -152,8 +151,7 @@ export function Header() {
 						</SheetTrigger>
 						<SheetContent side="right" className="w-64 px-6 pt-10">
 							<SheetTitle className="text-xl font-bold mb-8">
-								{t("header.brandFirst")}
-								<span className="text-primary">{t("header.brandSecond")}</span>
+								{t("header.brand")}
 							</SheetTitle>
 							<nav className="flex flex-col gap-4">{mobileLinks}</nav>
 						</SheetContent>

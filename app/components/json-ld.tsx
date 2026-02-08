@@ -42,7 +42,7 @@ export async function JsonLd() {
 		"@context": "https://schema.org",
 		"@type": "WebSite",
 		"@id": `${SITE_URL}/#website`,
-		name: "Johan Dev",
+		name: "Johan",
 		url: SITE_URL,
 		inLanguage: ["en", "es"],
 		author: { "@type": "Person", "@id": `${SITE_URL}/#person` },

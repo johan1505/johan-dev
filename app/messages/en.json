@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "Johan Dev — Freelance Web Developer",
+		"title": "Johan — Freelance Web Developer",
 		"description": "Freelance Web Developer crafting stunning, modern websites that help businesses grow. Former Amazon Engineer."
 	},
 	"jsonLd": {
@@ -8,8 +8,7 @@
 		"description": "Freelance Web Developer crafting stunning, modern websites that help businesses grow."
 	},
 	"header": {
-		"brandFirst": "Johan",
-		"brandSecond": "Dev",
+		"brand": "Johan",
 		"cta": "Let's Talk",
 		"mobileMenu": {
 			"ariaLabel": "Toggle mobile menu",
@@ -121,13 +120,12 @@
 		}
 	},
 	"footer": {
-		"brandFirst": "Johan",
-		"brandSecond": "Dev",
+		"brand": "Johan",
 		"tagline": "Designing the future of the web. Let's create something extraordinary together.",
 		"servicesTitle": "Services",
 		"services": ["Web Design", "Development", "SEO Optimization", "UI/UX Design"],
 		"linksTitle": "Links",
-		"copyright": "Johan Dev. All rights reserved.",
+		"copyright": "Johan. All rights reserved.",
 		"madeWithPrefix": "Made with",
 		"madeWithSuffix": "and a lot of coffee",
 		"socialLinks": {

@@ -26,5 +26,5 @@
 			"outputs": []
 		}
 	},
-	"globalPassThroughEnv": ["NODE_ENV", "CI"]
+	"globalPassThroughEnv": ["NODE_ENV", "CI", "NEXT_PUBLIC_CONTACT_API_URL"]
 }

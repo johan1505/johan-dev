@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "Johan Dev — Desarrollador Web Freelance",
+		"title": "Johan — Desarrollador Web Freelance",
 		"description": "Desarrollador Web Freelance creando sitios web impresionantes y modernos que ayudan a crecer a los negocios. Ex Ingeniero de Amazon."
 	},
 	"jsonLd": {
@@ -8,8 +8,7 @@
 		"description": "Desarrollador Web Freelance creando sitios web impresionantes y modernos."
 	},
 	"header": {
-		"brandFirst": "Johan",
-		"brandSecond": "Dev",
+		"brand": "Johan",
 		"cta": "Hablemos",
 		"mobileMenu": {
 			"ariaLabel": "Alternar menú móvil",
@@ -118,13 +117,12 @@
 		}
 	},
 	"footer": {
-		"brandFirst": "Johan",
-		"brandSecond": "Dev",
+		"brand": "Johan",
 		"tagline": "Diseñando el futuro de la web. Creemos algo extraordinario juntos.",
 		"servicesTitle": "Servicios",
 		"services": ["Diseño Web", "Desarrollo", "Optimización SEO", "Diseño UI/UX"],
 		"linksTitle": "Enlaces",
-		"copyright": "Johan Dev. Todos los derechos reservados.",
+		"copyright": "Johan. Todos los derechos reservados.",
 		"madeWithPrefix": "Hecho con",
 		"madeWithSuffix": "y mucho café",
 		"socialLinks": {

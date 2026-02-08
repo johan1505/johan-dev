@@ -15,8 +15,7 @@ export async function Footer() {
 				<div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 					<div className="sm:col-span-2">
 						<p className="text-xl font-bold">
-							{t("footer.brandFirst")}
-							<span className="text-primary">{t("footer.brandSecond")}</span>
+							{t("footer.brand")}
 						</p>
 						<p className="mt-2 text-[0.9375rem] text-muted-foreground max-w-sm">
 							{t("footer.tagline")}
@@ -63,7 +62,7 @@ export async function Footer() {
 								<li key={key}>
 									<a
 										href={`#${key}`}
-										className="text-[0.875rem] text-muted-foreground hover:text-foreground transition-colors"
+										className="text-[0.875rem] text-muted-foreground hover:text-foreground transition-colors underline"
 									>
 										{t(`sections.${key}`)}
 									</a>
