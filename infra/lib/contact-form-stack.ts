@@ -26,8 +26,6 @@ export class ContactFormStack extends cdk.Stack {
 	constructor(scope: Construct, id: string, props: ContactFormStackProps) {
 		super(scope, id, props);
 
-		const senderEmail = `noreply@${props.hostedZone.zoneName}`;
-
 		const contactQueue = new sqs.Queue(this, "ContactRequestQueue", {
 			queueName: "johan-dev-contact-requests",
 			visibilityTimeout: cdk.Duration.seconds(SQS_VISIBILITY_TIMEOUT_SECONDS),
@@ -41,8 +39,14 @@ export class ContactFormStack extends cdk.Stack {
 			},
 		});
 
-		new ses.EmailIdentity(this, "SesDomainIdentity", {
+		const senderEmailIdentity = new ses.EmailIdentity(this, "SesDomainIdentity", {
 			identity: ses.Identity.publicHostedZone(props.hostedZone),
+		});
+
+		const senderEmail = `noreply@${props.hostedZone.zoneName}`;
+
+		const receipientEmailIdentity = new ses.EmailIdentity(this, "ReceipientEmailIdentity", {
+			identity: ses.Identity.email(props.recipientEmail),
 		});
 
 		const emailProcessorLambda = new NodejsFunction(this, "EmailProcessorLambda", {
@@ -65,9 +69,7 @@ export class ContactFormStack extends cdk.Stack {
 		emailProcessorLambda.addToRolePolicy(
 			new iam.PolicyStatement({
 				actions: ["ses:SendEmail", "ses:SendRawEmail"],
-				resources: [
-					`arn:aws:ses:${this.region}:${this.account}:identity/${props.hostedZone.zoneName}`,
-				],
+				resources: [receipientEmailIdentity.emailIdentityArn, senderEmailIdentity.emailIdentityArn],
 			})
 		);
 
