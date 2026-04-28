@@ -60,8 +60,8 @@ export async function Portfolio() {
 								</div>
 							</div>
 
-							<div className="flex flex-col justify-between p-6 sm:p-8 lg:p-10">
-								<div>
+							<div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+								<div className="flex flex-1 flex-col justify-center">
 									<h3 className="text-[2rem] sm:text-[2.4rem] font-black tracking-[-0.03em] uppercase leading-[0.95]">
 										{project.name}
 									</h3>
@@ -82,7 +82,7 @@ export async function Portfolio() {
 								</div>
 
 								<div className="mt-8 border-t-[3px] border-border pt-6">
-									<div className="flex items-center justify-end">
+									<div className="flex items-center justify-center">
 										<a
 											href={PROJECT_URL}
 											target="_blank"
