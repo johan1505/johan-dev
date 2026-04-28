@@ -85,10 +85,30 @@
 		]
 	},
 	"portfolio": {
+		"label": "Selected Work",
 		"title": "Portfolio",
-		"highlight": "Coming Soon",
-		"description": "I'm currently curating a selection of my best projects to showcase here. In the meantime, I'm available for new opportunities and would love to discuss your project requirements.",
-		"cta": "Request Recent Work"
+		"highlight": "Live Work",
+		"description": "A snapshot of production websites built to turn attention into action. Open the live experience, audit the UX, and see the level of polish your business can expect.",
+		"status": "Live Now",
+		"cardLabel": "Featured Project",
+		"visitLabel": "Launch the production site",
+		"openProject": "Visit Live Site",
+		"footerText": "Need a website that feels premium, performs well, and guides visitors toward the next step? That's the standard I build for.",
+		"footerCta": "Start Your Project",
+		"projects": {
+			"asDistributors": {
+				"name": "A&S Distributors",
+				"category": "Wholesale E-Commerce",
+				"domain": "asdistributors.com",
+				"description": "A modern wholesale e-commerce platform for A&S Distributors, featuring a multilingual product catalog and a streamlined quote-request system built to turn user browsing into business profits.",
+				"imageAlt": "Preview illustration of the A&S Distributors wholesale e-commerce platform",
+				"features": {
+					"catalog": "Multilingual catalog",
+					"multilingual": "Wholesale browsing",
+					"quotes": "Quote-first funnel"
+				}
+			}
+		}
 	},
 	"contact": {
 		"label": "Get In Touch",

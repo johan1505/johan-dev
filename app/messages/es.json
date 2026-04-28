@@ -82,10 +82,30 @@
 		]
 	},
 	"portfolio": {
+		"label": "Trabajo Seleccionado",
 		"title": "Portafolio",
-		"highlight": "Próximamente",
-		"description": "Actualmente estoy curando una selección de mis mejores proyectos para mostrar aquí. Mientras tanto, estoy disponible para nuevas oportunidades y me encantaría discutir los requisitos de tu proyecto.",
-		"cta": "Solicitar Trabajo Reciente"
+		"highlight": "Sitios en Vivo",
+		"description": "Una muestra de sitios web en producción creados para convertir la atención en acción. Abre la experiencia en vivo, evalúa la UX y ve el nivel de detalle que tu negocio puede esperar.",
+		"status": "En Vivo",
+		"cardLabel": "Proyecto Destacado",
+		"visitLabel": "Abrir el sitio en producción",
+		"openProject": "Visitar Sitio",
+		"footerText": "¿Necesitas un sitio web que se sienta premium, rinda bien y guíe a tus visitantes al siguiente paso? Ese es el estándar con el que trabajo.",
+		"footerCta": "Inicia Tu Proyecto",
+		"projects": {
+			"asDistributors": {
+				"name": "A&S Distributors",
+				"category": "E-Commerce Mayorista",
+				"domain": "asdistributors.com",
+				"description": "Una plataforma moderna de comercio electrónico mayorista para A&S Distributors, con un catálogo de productos multilingüe y un sistema ágil de solicitud de cotizaciones diseñado para convertir la navegación en ganancias.",
+				"imageAlt": "Ilustración previa de la plataforma de comercio electrónico mayorista de A&S Distributors",
+				"features": {
+					"catalog": "Catálogo multilingüe",
+					"multilingual": "Exploración mayorista",
+					"quotes": "Flujo de cotización"
+				}
+			}
+		}
 	},
 	"contact": {
 		"label": "Ponerse en Contacto",
