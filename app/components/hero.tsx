@@ -7,10 +7,10 @@ export async function Hero() {
 
 	return (
 		<section className="min-h-[calc(100vh-4rem)] flex items-center pt-16 overflow-hidden">
-			<div className="max-w-7xl mx-auto px-6 sm:px-8 w-full">
+			<div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
 				<div className="grid md:grid-cols-12 gap-0 items-end">
 					{/* Left column - massive type */}
-					<div className="md:col-span-8">
+					<div className="md:col-span-8 min-w-0">
 						<div className="animate-fade-in-left">
 							<Badge
 								variant="outline"
@@ -22,7 +22,7 @@ export async function Hero() {
 						</div>
 
 						<h1
-							className="animate-fade-in-up text-[3.5rem] sm:text-[5rem] lg:text-[7rem] xl:text-[8rem] font-black tracking-[-0.04em] leading-[0.9] uppercase"
+							className="animate-fade-in-up max-w-full text-[clamp(3rem,15vw,5rem)] sm:text-[5rem] lg:text-[7rem] xl:text-[8rem] font-black tracking-[-0.04em] leading-[0.9] uppercase"
 							style={
 								{
 									"--anim-y": "60px",
@@ -32,7 +32,7 @@ export async function Hero() {
 							}
 						>
 							{t("titleStart")} <span className="text-primary italic">{t("titleHighlight1")}</span>{" "}
-							<span className="whitespace-nowrap">{t("titleMid")}</span>{" "}
+							<span className="sm:whitespace-nowrap">{t("titleMid")}</span>{" "}
 							<span className="text-primary italic">{t("titleHighlight2")}</span> {t("titleEnd")}
 						</h1>
 					</div>

@@ -127,7 +127,7 @@ export function Header() {
 				scrolled ? "bg-background/95 backdrop-blur-sm border-b-[3px] border-border" : ""
 			}`}
 		>
-			<div className="max-w-7xl mx-auto px-6 sm:px-8 flex h-16 items-center justify-between">
+			<div className="max-w-7xl mx-auto px-4 sm:px-8 flex h-16 items-center justify-between">
 				<a href="/" className="text-2xl font-black uppercase tracking-[-0.02em]">
 					{t("header.brand")}
 					<span className="text-primary">.</span>
