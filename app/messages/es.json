@@ -115,6 +115,7 @@
 			"labels": {
 				"name": "Nombre",
 				"email": "Correo",
+				"phone": "Número de Teléfono",
 				"subject": "Asunto",
 				"message": "Mensaje",
 				"agree": "Acepto ser contactado"
@@ -122,6 +123,7 @@
 			"placeholders": {
 				"name": "Tu nombre",
 				"email": "tu.correo@ejemplo.com",
+				"phone": "Ingresa tu número de teléfono",
 				"subject": "¿De qué se trata?",
 				"message": "Cuéntame sobre tu proyecto..."
 			},
@@ -135,6 +137,7 @@
 		"error": {
 			"title": "Algo salió mal",
 			"description": "Por favor, intenta de nuevo más tarde.",
+			"phone": "Por favor, ingresa un número de teléfono válido.",
 			"agree": "Debes aceptar ser contactado."
 		}
 	},

@@ -19,6 +19,10 @@ function validatePayload(body: ContactFormPayload): string[] {
 		errors.push("email is invalid");
 	}
 
+	if (!body.phone || body.phone.trim() === "") {
+		errors.push("phone is required");
+	}
+
 	if (!body.subject || body.subject.trim() === "") {
 		errors.push("subject is required");
 	}

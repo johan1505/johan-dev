@@ -10,17 +10,22 @@ export async function ContactForm() {
 			labels: {
 				name: t("form.labels.name"),
 				email: t("form.labels.email"),
+				phone: t("form.labels.phone"),
 				subject: t("form.labels.subject"),
 				message: t("form.labels.message"),
 			},
 			placeholders: {
 				name: t("form.placeholders.name"),
 				email: t("form.placeholders.email"),
+				phone: t("form.placeholders.phone"),
 				subject: t("form.placeholders.subject"),
 				message: t("form.placeholders.message"),
 			},
 			agree: t("form.agree"),
 			submit: t("form.submit"),
+		},
+		validation: {
+			phone: t("error.phone"),
 		},
 		toast: {
 			title: t("toast.title"),

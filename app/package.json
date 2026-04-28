@@ -22,6 +22,7 @@
 		"radix-ui": "^1.4.3",
 		"react": "latest",
 		"react-dom": "latest",
+		"react-phone-number-input": "^3.4.16",
 		"sonner": "^2.0.7",
 		"tailwind-merge": "^3.4.0"
 	},

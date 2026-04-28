@@ -118,6 +118,7 @@
 			"labels": {
 				"name": "Name",
 				"email": "Email",
+				"phone": "Phone Number",
 				"subject": "Subject",
 				"message": "Message",
 				"agree": "I agree to be contacted"
@@ -125,6 +126,7 @@
 			"placeholders": {
 				"name": "Your name",
 				"email": "your.email@example.com",
+				"phone": "Enter your phone number",
 				"subject": "What's this about?",
 				"message": "Tell me about your project..."
 			},
@@ -138,6 +140,7 @@
 		"error": {
 			"title": "Something went wrong",
 			"description": "Please try again later.",
+			"phone": "Please enter a valid phone number.",
 			"agree": "You must agree to be contacted."
 		}
 	},

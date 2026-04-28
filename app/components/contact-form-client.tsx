@@ -2,10 +2,12 @@
 
 import { useRef, useState, type FormEvent } from "react";
 import { Send, Loader2 } from "lucide-react";
+import { isPossiblePhoneNumber } from "react-phone-number-input";
 import { toast } from "sonner";
 import type { ContactFormPayload } from "@johan-dev/types";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { PhoneInput } from "@/components/ui/phone-input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -13,11 +15,12 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 
 type ContactFormTranslations = {
 	form: {
-		labels: { name: string; email: string; subject: string; message: string };
-		placeholders: { name: string; email: string; subject: string; message: string };
+		labels: { name: string; email: string; phone: string; subject: string; message: string };
+		placeholders: { name: string; email: string; phone: string; subject: string; message: string };
 		agree: string;
 		submit: string;
 	};
+	validation: { phone: string };
 	toast: { title: string; description: string };
 	error: { title: string; description: string };
 };
@@ -30,14 +33,16 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 	const [loading, setLoading] = useState(false);
 	const [agreed, setAgreed] = useState(false);
 	const [attempted, setAttempted] = useState(false);
+	const [phone, setPhone] = useState("");
 	const formRef = useRef<HTMLFormElement>(null);
+	const phoneInvalid = attempted && !isPossiblePhoneNumber(phone || "");
 
 	async function onSubmit(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		setAttempted(true);
 
 		const form = e.currentTarget;
-		if (!form.checkValidity() || !agreed) {
+		if (!form.checkValidity() || !agreed || !isPossiblePhoneNumber(phone || "")) {
 			return;
 		}
 
@@ -46,6 +51,7 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 		const payload: ContactFormPayload = {
 			name: formData.get("name") as string,
 			email: formData.get("email") as string,
+			phone,
 			subject: formData.get("subject") as string,
 			message: formData.get("message") as string,
 			agreedToContact: agreed,
@@ -67,6 +73,7 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 			form.reset();
 			setAgreed(false);
 			setAttempted(false);
+			setPhone("");
 		} catch {
 			toast.error(t.error.title, { description: t.error.description });
 		} finally {
@@ -117,6 +124,32 @@ export function ContactFormClient({ translations: t }: { translations: ContactFo
 						className="invalid-field border-[2px] border-border font-mono focus:border-primary"
 					/>
 				</div>
+			</ScrollReveal>
+
+			<ScrollReveal className="space-y-2" style={{ transitionDelay: "0.04s" }}>
+				<Label
+					htmlFor="phone"
+					className="font-mono uppercase tracking-[0.15em] text-[0.6875rem] font-bold"
+				>
+					{t.form.labels.phone}
+					<RequiredDot />
+				</Label>
+				<PhoneInput
+					id="phone"
+					name="phone"
+					type="tel"
+					autoComplete="tel"
+					placeholder={t.form.placeholders.phone}
+					disabled={loading}
+					defaultCountry="US"
+					value={phone}
+					onChange={(value) => setPhone(value ?? "")}
+					aria-invalid={phoneInvalid}
+					className="border-[2px] border-border font-mono focus:border-primary"
+				/>
+				{phoneInvalid ? (
+					<p className="text-sm text-destructive font-mono">{t.validation.phone}</p>
+				) : null}
 			</ScrollReveal>
 
 			<ScrollReveal className="space-y-2" style={{ transitionDelay: "0.08s" }}>

@@ -49,6 +49,7 @@ function generateEmailContent(contact: ContactFormPayload): {
           <div class="section-title">Contact Information</div>
           <div class="info-row"><span class="label">Name:</span> ${contact.name}</div>
           <div class="info-row"><span class="label">Email:</span> <a href="mailto:${contact.email}">${contact.email}</a></div>
+          <div class="info-row"><span class="label">Phone:</span> <a href="tel:${contact.phone}">${contact.phone}</a></div>
         </div>
 
         <div class="section">
@@ -78,6 +79,7 @@ Contact Information
 -------------------
 Name: ${contact.name}
 Email: ${contact.email}
+Phone: ${contact.phone}
 
 Subject
 -------------------
