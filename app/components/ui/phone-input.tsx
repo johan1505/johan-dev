@@ -16,7 +16,7 @@ const PhoneInput = React.forwardRef<React.ElementRef<typeof RPNInput.default>, P
 		return (
 			<RPNInput.default
 				ref={ref}
-				className={cn("flex", className)}
+				className={cn("flex w-full min-w-0", className)}
 				flagComponent={FlagComponent}
 				countrySelectComponent={CountrySelect}
 				inputComponent={InputComponent}
@@ -32,7 +32,7 @@ PhoneInput.displayName = "PhoneInput";
 
 const InputComponent = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
 	({ className, ...props }, ref) => (
-		<Input ref={ref} className={cn("rounded-l-none", className)} {...props} />
+		<Input ref={ref} className={cn("min-w-0 rounded-l-none", className)} {...props} />
 	)
 );
 InputComponent.displayName = "PhoneInputInput";
@@ -48,10 +48,10 @@ type CountrySelectProps = {
 
 function CountrySelect({ disabled, value, options, onChange }: CountrySelectProps) {
 	return (
-		<label className="relative shrink-0">
+		<label className="relative block shrink-0">
 			<select
 				aria-label="Select country"
-				className="h-9 appearance-none rounded-l-md border border-r-0 border-input bg-transparent pl-11 pr-8 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+				className="absolute inset-0 z-10 h-9 w-16 cursor-pointer appearance-none opacity-0 disabled:pointer-events-none disabled:cursor-not-allowed"
 				disabled={disabled}
 				value={value}
 				onChange={(event) => onChange(event.target.value as RPNInput.Country)}
@@ -64,12 +64,10 @@ function CountrySelect({ disabled, value, options, onChange }: CountrySelectProp
 					) : null
 				)}
 			</select>
-			<div className="pointer-events-none absolute inset-y-0 left-3 flex items-center">
+			<div className="flex h-9 w-16 items-center justify-center gap-1 rounded-l-md border border-r-0 border-input bg-transparent px-2 text-muted-foreground">
 				<FlagComponent country={value} countryName={value} />
+				<span className="text-xs">▾</span>
 			</div>
-			<span className="pointer-events-none absolute inset-y-0 right-2 flex items-center text-xs text-muted-foreground">
-				▾
-			</span>
 		</label>
 	);
 }
