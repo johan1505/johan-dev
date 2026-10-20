@@ -1,8 +1,8 @@
 import { getTranslations } from "next-intl/server";
-import { Linkedin, Github, Heart } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const NAV_SECTIONS = ["about", "services", "portfolio", "testimonials", "contact"] as const;
+const NAV_SECTIONS = ["about", "services", "portfolio", "contact"] as const;
 const SERVICE_COUNT = 4;
 
 export async function Footer() {
@@ -87,13 +87,9 @@ export async function Footer() {
 					</div>
 				</div>
 
-				<div className="mt-0 border-brutal p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+				<div className="mt-0 border-brutal p-6 flex items-center">
 					<p className="text-[0.6875rem] text-muted-foreground font-mono uppercase tracking-wider">
 						&copy; {new Date().getFullYear()} {t("footer.copyright")}
-					</p>
-					<p className="text-[0.6875rem] text-muted-foreground flex items-center gap-1 font-mono uppercase tracking-wider">
-						{t("footer.madeWithPrefix")} <Heart className="h-3 w-3 text-primary fill-primary" />{" "}
-						{t("footer.madeWithSuffix")}
 					</p>
 				</div>
 			</div>

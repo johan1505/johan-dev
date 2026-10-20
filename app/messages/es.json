@@ -57,30 +57,6 @@
 			}
 		]
 	},
-	"testimonials": {
-		"label": "Testimonios",
-		"title": "Historias de Éxito de Clientes",
-		"items": [
-			{
-				"quote": "Johan entregó un trabajo excepcional en el rediseño de nuestro sitio web. La atención al detalle y la estética moderna superaron nuestras expectativas.",
-				"author": "Sarah Johnson",
-				"role": "CEO, TechStart Inc.",
-				"initials": "SJ"
-			},
-			{
-				"quote": "Profesional, receptivo e increíblemente talentoso. Nuestro nuevo sitio web nos ha ayudado a atraer más clientes y hacer crecer nuestro negocio.",
-				"author": "Michael Chen",
-				"role": "Fundador, Digital Solutions",
-				"initials": "MC"
-			},
-			{
-				"quote": "Las mejoras de SEO que Johan implementó han aumentado significativamente nuestro tráfico orgánico. ¡Muy recomendado!",
-				"author": "Emily Rodriguez",
-				"role": "Directora de Marketing, GrowthCo",
-				"initials": "ER"
-			}
-		]
-	},
 	"portfolio": {
 		"label": "Trabajo Seleccionado",
 		"title": "Portafolio",
@@ -148,8 +124,6 @@
 		"services": ["Diseño Web", "Desarrollo", "Optimización SEO", "Diseño UI/UX"],
 		"linksTitle": "Enlaces",
 		"copyright": "Johan. Todos los derechos reservados.",
-		"madeWithPrefix": "Hecho con",
-		"madeWithSuffix": "y mucho café",
 		"socialLinks": {
 			"linkedin": "LinkedIn de Johan",
 			"github": "GitHub de Johan"
@@ -162,7 +136,6 @@
 	"sections": {
 		"about": "Sobre Mí",
 		"services": "Habilidades",
-		"testimonials": "Testimonios",
 		"portfolio": "Portafolio",
 		"contact": "Contacto"
 	},

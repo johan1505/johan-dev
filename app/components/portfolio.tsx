@@ -6,7 +6,6 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 
 const PROJECT_URL = "https://asdistributors.com";
 const PROJECT_PREVIEW_SRC = "/images/as-distributors-portfolio-preview.png";
-const PROJECT_FEATURE_KEYS = ["catalog", "multilingual", "quotes"] as const;
 
 export async function Portfolio() {
 	const t = await getTranslations("portfolio");
@@ -15,7 +14,6 @@ export async function Portfolio() {
 		category: t("projects.asDistributors.category"),
 		description: t("projects.asDistributors.description"),
 		imageAlt: t("projects.asDistributors.imageAlt"),
-		features: PROJECT_FEATURE_KEYS.map((key) => t(`projects.asDistributors.features.${key}`)),
 	};
 
 	return (
@@ -69,16 +67,6 @@ export async function Portfolio() {
 										{project.description}
 									</p>
 
-									<div className="mt-6 flex flex-wrap gap-3">
-										{project.features.map((feature) => (
-											<span
-												key={feature}
-												className="border-[2px] border-border px-3 py-2 text-[0.6875rem] font-mono font-bold uppercase tracking-[0.18em]"
-											>
-												{feature}
-											</span>
-										))}
-									</div>
 								</div>
 
 								<div className="mt-8 border-t-[3px] border-border pt-6">

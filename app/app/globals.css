@@ -179,19 +179,6 @@ html {
 	box-shadow: 3px 3px 0 0 var(--border);
 }
 
-/* ── Large quotation marks ── */
-.quote-mark {
-	font-family: Georgia, "Times New Roman", serif;
-	font-size: 8rem;
-	line-height: 0;
-	color: var(--primary);
-	position: absolute;
-	top: 2.5rem;
-	left: 1rem;
-	user-select: none;
-	opacity: 0.3;
-}
-
 @keyframes wave {
 	0%,
 	100% {
@@ -277,7 +264,7 @@ html {
 	animation: fade-in-up 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* ── Scroll-triggered animations (services, testimonials, about) ── */
+/* ── Scroll-triggered animations (services, about) ── */
 .scroll-reveal {
 	opacity: 0;
 	transform: translateY(var(--anim-y, 30px));

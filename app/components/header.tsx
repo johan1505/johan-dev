@@ -8,7 +8,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/s
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 
-const NAV_SECTIONS = ["about", "services", "portfolio", "testimonials", "contact"] as const;
+const NAV_SECTIONS = ["about", "services", "portfolio", "contact"] as const;
 
 function useActiveSection() {
 	const [active, setActive] = useState<string | null>(null);
@@ -133,7 +133,7 @@ export function Header() {
 					<span className="text-primary">.</span>
 				</a>
 
-				<nav className="hidden md:flex items-center gap-8 relative">
+				<nav className="hidden lg:flex items-center gap-8 relative">
 					{desktopLinks}
 					{activeSection && (
 						<span
@@ -153,7 +153,7 @@ export function Header() {
 					<LocaleSwitcher />
 					<Button
 						size="sm"
-						className="hidden md:inline-flex ml-3 cursor-pointer font-mono uppercase tracking-wider text-[0.75rem] border-[3px] border-primary font-bold"
+						className="hidden lg:inline-flex ml-3 cursor-pointer font-mono uppercase tracking-wider text-[0.75rem] border-[3px] border-primary font-bold"
 						onClick={(e) => {
 							e.preventDefault();
 							const el = document.getElementById("contact");
@@ -168,7 +168,7 @@ export function Header() {
 							<Button
 								variant="ghost"
 								size="icon"
-								className="md:hidden"
+								className="lg:hidden"
 								aria-label={t("header.mobileMenu.ariaLabel")}
 							>
 								<Menu className="h-5 w-5" />

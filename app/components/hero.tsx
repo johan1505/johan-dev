@@ -1,5 +1,4 @@
 import { getTranslations } from "next-intl/server";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export async function Hero() {
@@ -8,21 +7,11 @@ export async function Hero() {
 	return (
 		<section className="min-h-[calc(100vh-4rem)] flex items-center pt-16 overflow-hidden">
 			<div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
-				<div className="grid md:grid-cols-12 gap-0 items-end">
+				<div className="grid lg:grid-cols-12 gap-0 items-end">
 					{/* Left column - massive type */}
-					<div className="md:col-span-8 min-w-0">
-						<div className="animate-fade-in-left">
-							<Badge
-								variant="outline"
-								className="mb-8 text-[0.75rem] px-4 py-1.5 font-mono uppercase tracking-[0.15em] border-[2px] border-foreground"
-							>
-								<span className="animate-wave mr-1.5">&#x1F44B;</span>
-								{t("badge")}
-							</Badge>
-						</div>
-
+					<div className="lg:col-span-8 min-w-0 lg:pr-8">
 						<h1
-							className="animate-fade-in-up max-w-full text-[clamp(3rem,15vw,5rem)] sm:text-[5rem] lg:text-[7rem] xl:text-[8rem] font-black tracking-[-0.04em] leading-[0.9] uppercase"
+							className="animate-fade-in-up max-w-full text-[clamp(3rem,12vw,5rem)] md:text-[5.5rem] lg:text-[6rem] xl:text-[8rem] font-black tracking-[-0.04em] leading-[0.9] uppercase"
 							style={
 								{
 									"--anim-y": "60px",
@@ -38,7 +27,7 @@ export async function Hero() {
 					</div>
 
 					{/* Right column - subtitle and CTAs */}
-					<div className="md:col-span-4 md:border-l-[3px] md:border-border md:pl-8 mt-10 md:mt-0 pb-4">
+					<div className="lg:col-span-4 lg:border-l-[3px] lg:border-border lg:pl-8 mt-10 lg:mt-0 pb-4">
 						<p
 							className="animate-fade-in-up text-[1rem] sm:text-[1.125rem] text-muted-foreground font-mono leading-relaxed"
 							style={{ animationDelay: "0.2s" } as React.CSSProperties}
@@ -48,7 +37,7 @@ export async function Hero() {
 						</p>
 
 						<div
-							className="animate-fade-in-up mt-8 flex flex-col sm:flex-row md:flex-col gap-3"
+							className="animate-fade-in-up mt-8 flex flex-col gap-3"
 							style={{ animationDelay: "0.3s" } as React.CSSProperties}
 						>
 							<Button

@@ -4,7 +4,6 @@ import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
 import { Services } from "@/components/services";
 import { Portfolio } from "@/components/portfolio";
-import { Testimonials } from "@/components/testimonials";
 import { ContactForm } from "@/components/contact-form";
 import { JsonLd } from "@/components/json-ld";
 
@@ -23,7 +22,6 @@ export default async function LocalePage({ params }: Props) {
 			<About />
 			<Services />
 			<Portfolio />
-			<Testimonials />
 			<ContactForm />
 		</>
 	);

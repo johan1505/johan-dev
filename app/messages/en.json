@@ -60,30 +60,6 @@
 			}
 		]
 	},
-	"testimonials": {
-		"label": "Testimonials",
-		"title": "Client Success Stories",
-		"items": [
-			{
-				"quote": "Johan delivered exceptional work on our website redesign. The attention to detail and modern aesthetic exceeded our expectations.",
-				"author": "Sarah Johnson",
-				"role": "CEO, TechStart Inc.",
-				"initials": "SJ"
-			},
-			{
-				"quote": "Professional, responsive, and incredibly talented. Our new website has helped us attract more clients and grow our business.",
-				"author": "Michael Chen",
-				"role": "Founder, Digital Solutions",
-				"initials": "MC"
-			},
-			{
-				"quote": "The SEO improvements Johan implemented have significantly increased our organic traffic. Highly recommended!",
-				"author": "Emily Rodriguez",
-				"role": "Marketing Director, GrowthCo",
-				"initials": "ER"
-			}
-		]
-	},
 	"portfolio": {
 		"label": "Selected Work",
 		"title": "Portfolio",
@@ -151,8 +127,6 @@
 		"services": ["Web Design", "Development", "SEO Optimization", "UI/UX Design"],
 		"linksTitle": "Links",
 		"copyright": "Johan. All rights reserved.",
-		"madeWithPrefix": "Made with",
-		"madeWithSuffix": "and a lot of coffee",
 		"socialLinks": {
 			"linkedin": "Johan's LinkedIn",
 			"github": "Johan's GitHub"
@@ -165,7 +139,6 @@
 	"sections": {
 		"about": "About",
 		"services": "Services",
-		"testimonials": "Testimonials",
 		"portfolio": "Portfolio",
 		"contact": "Contact"
 	},
