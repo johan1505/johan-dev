@@ -66,7 +66,6 @@ export async function Portfolio() {
 									<p className="mt-5 text-[0.9375rem] text-muted-foreground leading-relaxed font-mono">
 										{project.description}
 									</p>
-
 								</div>
 
 								<div className="mt-8 border-t-[3px] border-border pt-6">
