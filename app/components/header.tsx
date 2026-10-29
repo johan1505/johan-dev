@@ -33,14 +33,6 @@ function useActiveSection() {
 		return () => observer.disconnect();
 	}, []);
 
-	useEffect(() => {
-		if (active) {
-			history.replaceState(null, "", `#${active}`);
-		} else {
-			history.replaceState(null, "", window.location.pathname);
-		}
-	}, [active]);
-
 	return active;
 }
 
@@ -81,6 +73,7 @@ export function Header() {
 		(e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
 			e.preventDefault();
 			setOpen(false);
+			history.pushState(null, "", `#${sectionId}`);
 			const el = document.getElementById(sectionId);
 			if (el) {
 				el.scrollIntoView({ behavior: "smooth" });
