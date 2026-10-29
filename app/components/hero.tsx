@@ -11,7 +11,7 @@ export async function Hero() {
 					{/* Left column - massive type */}
 					<div className="lg:col-span-8 min-w-0 lg:pr-8">
 						<h1
-							className="animate-fade-in-up max-w-full text-[clamp(3rem,12vw,5rem)] md:text-[5.5rem] lg:text-[6rem] xl:text-[8rem] font-black tracking-[-0.04em] leading-[0.9] uppercase"
+							className="animate-fade-in-up max-w-full text-[clamp(2.75rem,9vw,4.5rem)] md:text-[4.5rem] lg:text-[5rem] xl:text-[6rem] font-black tracking-[-0.04em] leading-[0.9] uppercase"
 							style={
 								{
 									"--anim-y": "60px",
@@ -29,10 +29,11 @@ export async function Hero() {
 					{/* Right column - subtitle and CTAs */}
 					<div className="lg:col-span-4 lg:border-l-[3px] lg:border-border lg:pl-8 mt-10 lg:mt-0 pb-4">
 						<p
-							className="animate-fade-in-up text-[1rem] sm:text-[1.125rem] text-muted-foreground font-mono leading-relaxed"
+							className="animate-fade-in-up text-[clamp(1.25rem,2vw,1.625rem)] text-foreground font-sans font-bold leading-snug"
 							style={{ animationDelay: "0.2s" } as React.CSSProperties}
 						>
-							{t("subtitle")}
+							<span className="text-primary">{t("subtitleRole")}</span>
+							{t("subtitleRest")}
 							<span className="animate-blink text-primary ml-0.5">|</span>
 						</p>
 
